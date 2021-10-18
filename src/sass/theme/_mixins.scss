@@ -1,0 +1,36 @@
+@function font-weight($weight) {
+	@if map_has_key($font-weights, $weight) {
+		@return map-get($font-weights, $weight);
+	} @else {
+		@warn "#{$weight} does not exist";
+		@return null;
+	}
+}
+
+@function colour($colour, $tone: "base") {
+	@if type-of(map-get($colours, $colour)) == "map" {
+		@return map-deep-get($colours, $colour, $tone);
+	} @else {
+		@if map_has_key($colours, $colour) {
+			@return map-get($colours, $colour);
+		} @else {
+			@warn "#{$colour} does not exist";
+			@return null;
+		}
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
