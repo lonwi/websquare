@@ -33,7 +33,7 @@ function cpt_insights() {
       'publicly_queryable' => true,
       'has_archive'        => false,
       'rewrite'            => array(
-        'slug' => $cpt['slug'],
+        'slug' => $cpt['slug']. '/%insights_category%',
         'with_front' => false,
       ),
       'menu_position'      => 5,

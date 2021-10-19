@@ -40,12 +40,12 @@ function tax_insights()
 			'show_ui'               => true,
 			'show_admin_column'     => true,
 			'query_var'             => true,
-			'public'                => true,
+			'public'                => false,
 			'show_in_nav_menus'     => true,
 			'show_tagcloud'         => true,
 			'meta_box_cb'           => false,
 			'update_count_callback' => '_update_post_term_count',
-			'rewrite'               => array('slug' => $tax['slug'])
+			'rewrite'               => array('slug' => $tax['slug'], 'with_front' => false)
 		)
 	);
 }
