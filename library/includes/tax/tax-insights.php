@@ -1,10 +1,10 @@
 <?php
 
-function tax_news()
+function tax_insights()
 {
 
 	$cpt = array(
-		'post_type'   => 'news'
+		'post_type'   => 'insights'
 	);
 
 	$tax = array(

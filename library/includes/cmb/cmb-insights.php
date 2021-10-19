@@ -1,5 +1,5 @@
 <?php
-function cmb_news()
+function cmb_insights()
 {
 	$prefix = 'insights';
 

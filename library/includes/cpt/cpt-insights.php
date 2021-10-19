@@ -1,6 +1,6 @@
 <?php
 
-function cpt_news() {
+function cpt_insights() {
 
   $cpt = array(
       'singular' => 'Insight',
