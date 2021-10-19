@@ -1,7 +1,7 @@
 <?php
 function cmb_news()
 {
-	$prefix = 'news';
+	$prefix = 'insights';
 
 	$cmb = new_cmb2_box(array(
 		'title'         => 'Category',
@@ -20,21 +20,21 @@ function cmb_news()
 		'remove_default' => 'true',
 	));
 
-	$cmb = new_cmb2_box(array(
-		'title'         => 'Description',
-		'id'            => $prefix . '_description_container',
-		'object_types'  => array($prefix),
-		'context'       => 'normal',
-		'priority'      => 'low',
-		'show_names'    => false
-	));
+	// $cmb = new_cmb2_box(array(
+	// 	'title'         => 'Description',
+	// 	'id'            => $prefix . '_description_container',
+	// 	'object_types'  => array($prefix),
+	// 	'context'       => 'normal',
+	// 	'priority'      => 'low',
+	// 	'show_names'    => false
+	// ));
 
-	$cmb->add_field(array(
-		'name'        => 'Description',
-		'id'          => $prefix . '_description',
-		'type' => 'textarea',
-		'attributes' => array(
-			'maxlength' => 220
-		)
-	));
+	// $cmb->add_field(array(
+	// 	'name'        => 'Description',
+	// 	'id'          => $prefix . '_description',
+	// 	'type' => 'textarea',
+	// 	'attributes' => array(
+	// 		'maxlength' => 220
+	// 	)
+	// ));
 }

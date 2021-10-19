@@ -3,10 +3,10 @@
 function cpt_news() {
 
   $cpt = array(
-      'singular' => 'Article',
-      'plural'   => 'Articles',
-      'slug'   => 'news',
-      'post_type'   => 'news'
+      'singular' => 'Insight',
+      'plural'   => 'Insights',
+      'slug'   => 'insights',
+      'post_type'   => 'insights'
   );
 
   register_post_type( $cpt['post_type'],
