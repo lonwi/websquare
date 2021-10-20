@@ -10,7 +10,7 @@ function tax_insights()
 	$tax = array(
 		'singular' => 'Category',
 		'plural'   => 'Categories',
-		'slug'   => 'categories',
+		'slug'   => 'insights',
 		'taxonomy_type'   => 'category'
 	);
 
