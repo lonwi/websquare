@@ -40,7 +40,7 @@ function tax_insights()
 			'show_ui'               => true,
 			'show_admin_column'     => true,
 			'query_var'             => true,
-			'public'                => false,
+			'public'                => true,
 			'show_in_nav_menus'     => true,
 			'show_tagcloud'         => true,
 			'meta_box_cb'           => false,
