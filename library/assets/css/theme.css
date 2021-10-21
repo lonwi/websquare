@@ -548,21 +548,33 @@ template {
 @media (min-width: 768px) {
   .section-content--shifted .section-content__image--left {
     margin-right: 60px !important;
+    -webkit-margin-end: 60px !important;
+    -moz-margin-end: 60px !important;
+    margin-inline-end: 60px !important;
   }
 }
 @media (min-width: 1025px) {
   .section-content--shifted .section-content__image--left {
     margin-right: 120px !important;
+    -webkit-margin-end: 120px !important;
+    -moz-margin-end: 120px !important;
+    margin-inline-end: 120px !important;
   }
 }
 @media (min-width: 768px) {
   .section-content--shifted .section-content__image--right {
     margin-left: 60px !important;
+    -webkit-margin-start: 60px !important;
+    -moz-margin-start: 60px !important;
+    margin-inline-start: 60px !important;
   }
 }
 @media (min-width: 1025px) {
   .section-content--shifted .section-content__image--right {
     margin-left: 120px !important;
+    -webkit-margin-start: 120px !important;
+    -moz-margin-start: 120px !important;
+    margin-inline-start: 120px !important;
   }
 }
 
