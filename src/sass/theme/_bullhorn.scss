@@ -196,3 +196,12 @@
 		}
 	}
 }
+.rtl {
+	.bullhorn-search-pagination {
+		&__button {
+			i {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}

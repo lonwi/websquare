@@ -6452,4 +6452,9 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 700;
 }
 
+.rtl .bullhorn-search-pagination__button i {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 /*# sourceMappingURL=theme.css.map */
