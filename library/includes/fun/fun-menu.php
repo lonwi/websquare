@@ -58,9 +58,6 @@ if (!function_exists('add_menu_title')) {
 	function add_menu_title($item_output, $item, $depth, $args)
 	{
 		global $title;
-		// echo '<pre>';
-		// print_r($item);
-		// echo '</pre>';
 		$title = __($item->post_excerpt ? $item->post_excerpt : $item->title);
 		return $item_output;
 	}
