@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Websquare 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/websquare\n"
-"POT-Creation-Date: 2021-10-21T15:57:28+00:00\n"
-"PO-Revision-Date: 2021-10-21 16:59+0100\n"
+"POT-Creation-Date: 2021-10-21T16:18:14+00:00\n"
+"PO-Revision-Date: 2021-10-21 17:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -22,9 +22,17 @@ msgstr ""
 msgid "Websquare"
 msgstr "‫Websquare"
 
+#: bullhorn/bh-filters.php:80
+msgid "Job Function"
+msgstr "وظيفة الوظيفة"
+
 #: bullhorn/bh-job-list.php:137
 msgid "Keywords"
 msgstr "كلمات مفتاحية"
+
+#: bullhorn/bh-job-list.php:169
+msgid "Business Sector"
+msgstr "قطاع الأعمال"
 
 #: bullhorn/bh-job-list.php:178
 msgid "Search"

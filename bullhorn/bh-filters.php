@@ -77,7 +77,7 @@ class BhFilters {
 			Filter::create(['freetext']),
 
 			Filter::create(['field'], null)
-			      ->defaultText('Job Function')
+			      ->defaultText(esc_html__('Job Function', 'websquare'))
 			      ->possibleValues($fields, false),
 
 			Filter::create(['sector'], null)

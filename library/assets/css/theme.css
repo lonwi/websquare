@@ -6321,7 +6321,7 @@ a.text-dark:hover, a.text-dark:focus {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 15px;
+  padding: 0 30px;
   position: absolute;
   z-index: 0;
   top: 0;

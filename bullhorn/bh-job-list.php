@@ -166,7 +166,7 @@ class ApplicationForm extends RawForm
 								array(
 									'class' => 'filter-select'
 								),
-								'Business Sector'
+								esc_html__('Business Sector', 'websquare')
 							);
 
 							?>
@@ -199,17 +199,17 @@ class ApplicationForm extends RawForm
 				<?php foreach ($results as $job) : ?>
 					<a href='<?php echo $job->getURL(); ?>' rel="nofollow" class="bullhorn-search-results__item">
 						<div class="row">
-							<div class="col-md">
+							<div class="col-md-5">
 								<div class="bullhorn-search-results__item--job-title">
 									<?= HtmlHelper::encode($job->title) ?>
 								</div>
 							</div>
-							<div class="col-md">
+							<div class="col-md-5">
 								<div class="bullhorn-search-results__item--job-location">
 									<?= HtmlHelper::encode($job->custom_1) ?>
 								</div>
 							</div>
-							<div class="col-md-auto">
+							<div class="col-md-2 d-flex justify-content-end">
 								<div class="bullhorn-search-results__item--job-date">
 									<?php
 									$time_ago = human_time_diff(date(
