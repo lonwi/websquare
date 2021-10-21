@@ -1,0 +1,51 @@
+# Copyright (C) 2021 Websquare
+# This file is distributed under the .
+msgid ""
+msgstr ""
+"Project-Id-Version: Websquare 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/websquare\n"
+"POT-Creation-Date: 2021-10-21T15:57:28+00:00\n"
+"PO-Revision-Date: 2021-10-21 16:59+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Domain: websquare\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+msgid "Websquare"
+msgstr "‫Websquare"
+
+#: bullhorn/bh-job-list.php:137
+msgid "Keywords"
+msgstr "كلمات مفتاحية"
+
+#: bullhorn/bh-job-list.php:178
+msgid "Search"
+msgstr "بحث"
+
+#: bullhorn/bh-job-list.php:191
+msgid ""
+"Your search found no jobs within our database. Try broadening your search or "
+"contact us to discuss your job requirements."
+msgstr ""
+"بحثك لم يجد وظائف في قاعدة بياناتنا حاول توسيع نطاق البحث أو اتصل بنا "
+"لمناقشة متطلبات وظيفتك."
+
+#: bullhorn/bh-job-list.php:221
+msgid " ago"
+msgstr " منذ"
+
+#: bullhorn/bh-job-list.php:247
+msgid "Previous Page"
+msgstr "الصفحة السابقة"
+
+#: bullhorn/bh-job-list.php:279
+msgid "Next Page"
+msgstr "الصفحة التالية"

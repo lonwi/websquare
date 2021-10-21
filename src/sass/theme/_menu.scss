@@ -105,8 +105,8 @@
 			display: none;
 			position: absolute;
 			top: 90px;
-			left: 0;
-			right: 0;
+			inset-inline-start: 0;
+			inset-inline-end: 0;
 			width: 100%;
 			padding: 60px 120px;
 			@media (min-width: 1025px) and (max-width: 1360px) {
@@ -134,15 +134,15 @@
 					display: none;
 					position: absolute;
 					top: 0;
-					left: 620px;
-					right: 0;
+					inset-inline-start: 620px;
+					inset-inline-end: 0;
 					bottom: 0;
 					padding: 60px 30px;
 					@media (min-width: 1025px) and (max-width: 1360px) {
-						left: 420px;
+						inset-inline-start: 420px;
 					}
 					@media (min-width: 1361px) and (max-width: 1650px) {
-						left: 460px;
+						inset-inline-start: 460px;
 					}
 					> li {
 						&:hover {
@@ -162,15 +162,15 @@
 							display: none;
 							position: absolute;
 							top: 210px;
-							left: 530px;
-							right: 0;
+							inset-inline-start: 530px;
+							inset-inline-end: 0;
 							bottom: 0;
 							padding: 0 30px 60px;
 							@media (min-width: 1025px) and (max-width: 1360px) {
-								left: 390px;
+								inset-inline-start: 390px;
 							}
 							@media (min-width: 1361px) and (max-width: 1650px) {
-								left: 420px;
+								inset-inline-start: 420px;
 							}
 							> li {
 								&:hover {
