@@ -42,21 +42,21 @@
 			}
 			&--left {
 				@media(min-width:768px) {
-					margin-right: 60px!important;
+					// margin-right: 60px!important;
 					margin-inline-end: 60px!important;
 				}
 				@media(min-width:1025px) {
-					margin-right: 120px!important;
+					// margin-right: 120px!important;
 					margin-inline-end: 120px!important;
 				}
 			}
 			&--right {
 				@media(min-width:768px) {
-					margin-left: 60px!important;
+					// margin-left: 60px!important;
 					margin-inline-start: 60px!important;
 				}
 				@media(min-width:1025px) {
-					margin-left: 120px!important;
+					// margin-left: 120px!important;
 					margin-inline-start: 120px!important;
 				}
 			}
