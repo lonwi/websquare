@@ -2,12 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-add_action('init', 'websquare_enable_sessions');
-
 if (!function_exists('websquare_enable_sessions')) {
-	/**
-	 * Make sure that sessions are enabled.
-	 */
 	function websquare_enable_sessions()
 	{
 		if (!session_id()) {
@@ -16,7 +11,7 @@ if (!function_exists('websquare_enable_sessions')) {
 	}
 }
 
-// add_action('template_redirect', 'websquare_language_switch');
+add_action('init', 'websquare_enable_sessions');
 
 if (!function_exists('websquare_language_switch')) {
 	function websquare_language_switch()
@@ -39,6 +34,8 @@ if (!function_exists('websquare_language_switch')) {
 		}
 	}
 }
+
+// add_action('template_redirect', 'websquare_language_switch');
 
 // function translate_date($language, $d, $m, $y)
 // {

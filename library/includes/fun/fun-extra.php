@@ -14,6 +14,7 @@ if (!function_exists('websquare_remove_post_type_support')) {
 		remove_post_type_support('post', 'editor');
 	}
 }
+
 add_action('init', 'websquare_remove_post_type_support');
 
 if (!function_exists('websquare_upload_mimes')) {
@@ -23,6 +24,7 @@ if (!function_exists('websquare_upload_mimes')) {
 		return $mime_types;
 	}
 }
+
 add_filter('upload_mimes', 'websquare_upload_mimes', 1, 1);
 
 if (!function_exists('websquare_pingback')) {
@@ -36,6 +38,7 @@ if (!function_exists('websquare_pingback')) {
 		}
 	}
 }
+
 add_action('wp_head', 'websquare_pingback');
 
 if (!function_exists('websquare_mobile_web_app_meta')) {
@@ -49,5 +52,5 @@ if (!function_exists('websquare_mobile_web_app_meta')) {
 		echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr(get_bloginfo('name')) . ' - ' . esc_attr(get_bloginfo('description')) . '">' . "\n";
 	}
 }
-add_action('wp_head', 'websquare_mobile_web_app_meta');
 
+add_action('wp_head', 'websquare_mobile_web_app_meta');

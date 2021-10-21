@@ -2,8 +2,6 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-add_action('after_setup_theme', 'websquare_register_nav_menus');
-
 if (!function_exists('websquare_register_nav_menus')) {
 	function websquare_register_nav_menus()
 	{
@@ -18,10 +16,10 @@ if (!function_exists('websquare_register_nav_menus')) {
 	}
 }
 
-add_shortcode('header_navigation', 'header_navigation');
+add_action('after_setup_theme', 'websquare_register_nav_menus');
 
-if (!function_exists('header_navigation')) {
-	function header_navigation()
+if (!function_exists('header_navigation_function')) {
+	function header_navigation_function()
 	{
 
 		$walker = new Custom_Walker_Nav_Menu;
@@ -44,6 +42,10 @@ if (!function_exists('header_navigation')) {
 		return ob_get_clean();
 	}
 }
+
+add_shortcode('header_navigation', 'header_navigation_function');
+
+
 if (!function_exists('add_menu_description')) {
 	function add_menu_description($item_output, $item, $depth, $args)
 	{
@@ -52,6 +54,7 @@ if (!function_exists('add_menu_description')) {
 		return $item_output;
 	}
 }
+
 add_filter('walker_nav_menu_start_el', 'add_menu_description', 10, 4);
 
 if (!function_exists('add_menu_title')) {
@@ -62,6 +65,7 @@ if (!function_exists('add_menu_title')) {
 		return $item_output;
 	}
 }
+
 add_filter('walker_nav_menu_start_el', 'add_menu_title', 10, 4);
 
 if (!class_exists('Custom_Walker_Nav_Menu')) {

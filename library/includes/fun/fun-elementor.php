@@ -1,4 +1,6 @@
 <?php
+// Exit if accessed directly.
+defined('ABSPATH') || exit;
 
 function add_responsive_column_order($element, $args)
 {
@@ -14,4 +16,5 @@ function add_responsive_column_order($element, $args)
 		]
 	);
 }
+
 add_action('elementor/element/column/layout/before_section_end', 'add_responsive_column_order', 10, 3);

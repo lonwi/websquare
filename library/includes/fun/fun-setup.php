@@ -2,8 +2,6 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-add_action('after_setup_theme', 'websquare_after_setup_theme');
-
 if (!function_exists('websquare_after_setup_theme')) {
 
 	function websquare_after_setup_theme()
@@ -20,13 +18,13 @@ if (!function_exists('websquare_after_setup_theme')) {
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+		add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
 
 		// Adding Thumbnail basic support.
 		add_theme_support('post-thumbnails');
@@ -39,7 +37,7 @@ if (!function_exists('websquare_after_setup_theme')) {
 	}
 }
 
-add_action('wp_enqueue_scripts', 'websquare_enqueue_scripts');
+add_action('after_setup_theme', 'websquare_after_setup_theme');
 
 if (!function_exists('websquare_enqueue_scripts')) {
 	/**
@@ -62,3 +60,5 @@ if (!function_exists('websquare_enqueue_scripts')) {
 		}
 	}
 }
+
+add_action('wp_enqueue_scripts', 'websquare_enqueue_scripts');
