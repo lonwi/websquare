@@ -51,16 +51,3 @@ if (!function_exists('websquare_mobile_web_app_meta')) {
 }
 add_action('wp_head', 'websquare_mobile_web_app_meta');
 
-if (!function_exists('websquare_insights_permalinks')) {
-	function websquare_insights_permalinks($post_link, $post)
-	{
-		if (is_object($post) && $post->post_type == 'insights') {
-			$terms = wp_get_object_terms($post->ID, 'insights_category');
-			if ($terms) {
-				return str_replace('%insights_category%', $terms[0]->slug, $post_link);
-			}
-		}
-		return $post_link;
-	}
-}
-add_filter('post_type_link', 'websquare_insights_permalinks', 1, 2);
