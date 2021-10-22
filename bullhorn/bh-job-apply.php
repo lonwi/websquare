@@ -223,19 +223,15 @@ if (!empty($_POST)) {
 							<div class="col-4">
 								<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 									<?php
+
 									$day = $formFilterMachine->getFilter('dob-day');
-									$day_value = $day->getValue();
-									if (!empty($day_value)) {
-										$day_value = (int)$day_value;
-									}
-									echo HtmlHelper::select(
+									echo $applicationForm->select(
 										'dob-day',
 										$day->getPossibleValueTexts(false),
-										$day_value,
 										array(
-											'required' => 'true'
-										),
-										esc_html__('Day', 'websquare')
+											'required' => 'true',
+											'_prompt' => esc_html__('Day', 'websquare')
+										)
 									);
 									?>
 									<i class="fas fa-chevron-down"></i>
@@ -245,15 +241,13 @@ if (!empty($_POST)) {
 								<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 									<?php
 									$month = $formFilterMachine->getFilter('dob-month');
-									$month_value = $month->getValue();
-									echo HtmlHelper::select(
+									echo $applicationForm->select(
 										'dob-month',
 										$month->getPossibleValueTexts(false),
-										$month_value,
 										array(
-											'required' => 'true'
-										),
-										esc_html__('Month', 'websquare')
+											'required' => 'true',
+											'_prompt' => esc_html__('Month', 'websquare')
+										)
 									);
 									?>
 									<i class="fas fa-chevron-down"></i>
@@ -263,18 +257,13 @@ if (!empty($_POST)) {
 								<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 									<?php
 									$year = $formFilterMachine->getFilter('dob-year');
-									$year_value = $year->getValue();
-									if (!empty($year_value)) {
-										$year_value = (int)$year_value;
-									}
-									echo HtmlHelper::select(
+									echo $applicationForm->select(
 										'dob-year',
 										$year->getPossibleValueTexts(false),
-										$year_value,
 										array(
-											'required' => 'true'
-										),
-										esc_html__('Year', 'websquare')
+											'required' => 'true',
+											'_prompt' => esc_html__('Year', 'websquare')
+										)
 									);
 									?>
 									<i class="fas fa-chevron-down"></i>
@@ -289,18 +278,13 @@ if (!empty($_POST)) {
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 							<?php
 							$nationality = $formFilterMachine->getFilter('countryID');
-							$nationality_value = $nationality->getValue();
-							if (!empty($nationality_value)) {
-								$nationality_value = (int)$nationality_value;
-							}
-							echo HtmlHelper::select(
+							echo $applicationForm->select(
 								'countryID',
 								$nationality->getPossibleValueTexts(false),
-								$nationality_value,
 								array(
-									'required' => 'true'
-								),
-								esc_html__('Please Select', 'websquare')
+									'required' => 'true',
+									'_prompt' => esc_html__('Please Select', 'websquare')
+								)
 							);
 							?>
 							<i class="fas fa-chevron-down"></i>
@@ -312,18 +296,13 @@ if (!empty($_POST)) {
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 							<?php
 							$nationality = $formFilterMachine->getFilter('customText5');
-							$nationality_value = $nationality->getValue();
-							if (!empty($nationality_value)) {
-								$nationality_value = (int)$nationality_value;
-							}
-							echo HtmlHelper::select(
+							echo $applicationForm->select(
 								'customText5',
 								$nationality->getPossibleValueTexts(false),
-								$nationality_value,
 								array(
-									'required' => 'true'
-								),
-								esc_html__('Please Select', 'websquare')
+									'required' => 'true',
+									'_prompt' => esc_html__('Please Select', 'websquare')
+								)
 							);
 							?>
 							<i class="fas fa-chevron-down"></i>
@@ -335,20 +314,16 @@ if (!empty($_POST)) {
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 							<?php
 							$experience = $formFilterMachine->getFilter('experience');
-							$nationality_value = $nationality->getValue();
-							$experience_value = $experience->getValue();
-							if (!empty($experience_value) || strlen($experience_value) > 0) {
-								$experience_value = (int)$experience_value;
-							}
-							echo HtmlHelper::select(
+							echo $applicationForm->select(
 								'experience',
 								$experience->getPossibleValueTexts(false),
-								$experience_value,
 								array(
-									'required' => 'true'
-								),
-								esc_html__('Please Select', 'websquare')
+									'required' => 'true',
+									'_prompt' => esc_html__('Please Select', 'websquare'),
+									'_promptValue' => '' // Issue with 0 and Empty so need an override
+								)
 							);
+
 							?>
 							<i class="fas fa-chevron-down"></i>
 						</div>
@@ -359,14 +334,13 @@ if (!empty($_POST)) {
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 							<?php
 							$notice = $formFilterMachine->getFilter('customText4');
-							echo HtmlHelper::select(
+							echo $applicationForm->select(
 								'customText4',
 								$notice->getPossibleValueTexts(false),
-								$notice->getValue(),
 								array(
-									'required' => 'true'
-								),
-								esc_html__('Please Select', 'websquare')
+									'required' => 'true',
+									'_prompt' => esc_html__('Please Select', 'websquare')
+								)
 							);
 							?>
 							<i class="fas fa-chevron-down"></i>
@@ -385,17 +359,14 @@ if (!empty($_POST)) {
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 							<?php
 							$sector = $formFilterMachine->getFilter('businessSectorID');
-							$sector_value = $sector->getValue();
-							echo HtmlHelper::multiSelect(
+							echo $applicationForm->multiSelect(
 								'businessSectorID',
 								$sector->getPossibleValueTexts(false),
-								$sector_value,
 								array(
 									'required' => 'true',
 									'size'  => 10,
 									'_promptValue' => ''
-								),
-								// esc_html__('Please Select', 'websquare')
+								)
 							);
 							?>
 							<!-- <i class="fas fa-chevron-down"></i> -->
@@ -406,15 +377,14 @@ if (!empty($_POST)) {
 						<label for="customText6" class="bullhorn-apply-form__label"><?php esc_html_e('Visa Type*:', 'websquare'); ?></label>
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--select">
 							<?php
-							$notice = $formFilterMachine->getFilter('customText6');
-							echo HtmlHelper::select(
+							$visa = $formFilterMachine->getFilter('customText6');
+							echo $applicationForm->select(
 								'customText6',
-								$notice->getPossibleValueTexts(false),
-								$notice->getValue(),
+								$visa->getPossibleValueTexts(false),
 								array(
-									'required' => 'true'
-								),
-								esc_html__('Please Select', 'websquare')
+									'required' => 'true',
+									'_prompt' => esc_html__('Please Select', 'websquare')
+								)
 							);
 							?>
 							<i class="fas fa-chevron-down"></i>
@@ -432,7 +402,7 @@ if (!empty($_POST)) {
 					<div class="col-12">
 						<label for="comments" class="bullhorn-apply-form__label"><?php esc_html_e('Add a message:', 'websquare'); ?></label>
 						<div class="bullhorn-apply-form__field bullhorn-apply-form__field--textarea">
-							<?php $applicationForm->textarea('comments', ['id' => 'comments', 'rows'=>'4', 'placeholder'=> esc_html__('Comments', 'websquare')]) ?>
+							<?php $applicationForm->textarea('comments', ['id' => 'comments', 'rows' => '4', 'placeholder' => esc_html__('Comments', 'websquare')]) ?>
 						</div>
 					</div>
 
