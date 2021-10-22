@@ -5,12 +5,9 @@ if (!class_exists('BullHorn_Factory')) {
 }
 
 use SquareChilli\Bullhorn\Client;
-use SquareChilli\Bullhorn\form\RawForm;
 
 include_once(get_template_directory() . '/bullhorn/bh-filters.php');
 include_once(get_template_directory() . '/bullhorn/bh-form-filters.php');
-
-// $api = BullHorn_Factory::Get()->get_api();
 
 $bhFilters     = BhFilters::instance();
 $filterMachine = $bhFilters->getFilterMachine();
@@ -56,70 +53,6 @@ if ($searched) {
 
 /** @var \SquareChilli\Bullhorn\models\JobOrder[] $results */
 $results = $jobQuery->all();
-
-// ------------------------------------------------
-
-$cvFile = $postData = null;
-
-$submittedApplication = false;
-class BaseDataClass
-{
-}
-class ApplicationForm extends RawForm
-{
-	#customText4 = Notice Period
-	#customText5 = Nationality / Citizenship
-	#businessSectorID = Industry
-	#customText6 = Visa Type
-	public function attributes()
-	{
-		return [
-			'name', 'firstName', 'lastName', 'email', 'phone',
-			'dob-day', 'dob-month', 'dob-year',
-			'countryID',
-			'customText5', 'experience', 'customText4',
-			'experience', 'occupation', 'businessSectorID',
-			'customText6',
-			'resume',
-			'comments'
-		];
-	}
-
-	public function requiredAttributes()
-	{
-		return [
-			'firstName', 'lastName', 'email', 'phone',
-			'date_of_birth',
-			'countryID',
-			'customText5', 'experience', 'customText4',
-			'occupation', 'businessSectorID',
-			'customText6',
-			'resume'
-		];
-	}
-
-	public function attributeLabels()
-	{
-		return [
-			'name'          => 'Name',
-			'firstName'     => 'First Name',
-			'lastName'      => 'Last Name',
-			'email'         => 'Email Address',
-			'phone'         => 'Phone Number',
-			'date_of_birth' => 'Date of Birth',
-			'countryID'     => 'Residence Location',
-			'customText5'   => 'Nationality / Citizenship',
-			'experience'    => 'Experience',
-			'customText4'   => 'Notice Period',
-			'occupation'    => 'Current / Last Job Title',
-			'businessSectorID'  => 'Industry',
-			'customText6'   => 'Visa Type',
-			'resume'        => 'Upload CV',
-			'comments'      => 'Add a message',
-		];
-	}
-}
-
 ?>
 <section class="bullhorn bullhorn-job-list">
 	<div class="bullhorn-search-form">
