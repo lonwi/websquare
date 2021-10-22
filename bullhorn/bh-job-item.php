@@ -112,7 +112,6 @@ try {
 		echo '<pre>' . print_r(HtmlHelper::encode($errorMessage), true) . '</pre>';
 	}
 }
-$applied = true;
 ?>
 
 <?php if (empty($jobOrder) && empty($errorMessage)) : ?>
