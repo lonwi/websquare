@@ -91,9 +91,9 @@ try {
 					]);
 					$email->sendTo($applicationUser->email);
 				}
-				$redirect_url = $jobOrder->getURL() . '?applied#applied';
-				wp_redirect($redirect_url);
-				exit;
+				// $redirect_url = $jobOrder->getURL() . '?applied#applied';
+				// wp_redirect($redirect_url);
+				// exit;
 				$applied = true; // Sometimes the redirect simply fails
 
 			} else {

@@ -11,7 +11,7 @@ if (!function_exists('websquare_enable_sessions')) {
 	}
 }
 
-add_action('init', 'websquare_enable_sessions');
+// add_action('init', 'websquare_enable_sessions');
 
 if (!function_exists('websquare_language_switch')) {
 	function websquare_language_switch()
