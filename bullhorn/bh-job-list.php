@@ -7,7 +7,7 @@ if (!class_exists('BullHorn_Factory')) {
 use SquareChilli\Bullhorn\Client;
 
 include_once(get_template_directory() . '/bullhorn/bh-filters.php');
-include_once(get_template_directory() . '/bullhorn/bh-form-filters.php');
+// include_once(get_template_directory() . '/bullhorn/bh-form-filters.php');
 
 $bhFilters     = BhFilters::instance();
 $filterMachine = $bhFilters->getFilterMachine();
@@ -15,8 +15,8 @@ $searched      = $bhFilters->isSearched();
 
 $paging = new \SquareChilli\Bullhorn\components\Paging($filterMachine->getFilterValue('page') - 1, 10);
 
-$bhFormFilters     = BhFormFilters::instance();
-$formFilterMachine = $bhFormFilters->getFilterMachine();
+// $bhFormFilters     = BhFormFilters::instance();
+// $formFilterMachine = $bhFormFilters->getFilterMachine();
 
 $jobQuery = \SquareChilli\Bullhorn\models\JobOrder::findOpen('jo')
 	->addSelect('jo.address_city')

@@ -12,12 +12,18 @@
 }
 
 .bullhorn {
+	h1, h2, h3, h4, h5, h6 {
+		color: colour("dark-royal");
+	}
 	font-family: "Manrope", Sans-serif;
 	* {
 	}
 }
 .bullhorn-search-form {
-	padding: 60px 0;
+	padding: 45px 0;
+	@media (min-width: 768px) {
+		padding: 60px 0;
+	}
 	&__field {
 		position: relative;
 		border-radius: 5px;
@@ -36,7 +42,7 @@
 			border: none;
 			outline: none;
 			&::placeholder {
-				color: colour("text");
+				color: colour("dark-grey");
 			}
 		}
 		&--input {
@@ -197,7 +203,14 @@
 	}
 }
 .bullhorn-job {
-
+	background: colour("white");
+	padding: 45px 0;
+	@media (min-width: 768px) {
+		padding: 60px 0;
+	}
+	@media (min-width: 1367px) {
+		padding: 90px 0;
+	}
 	&__title {
 		color: colour("dark-royal");
 		margin-bottom: 15px;
@@ -221,7 +234,93 @@
 		font-size: 16px;
 	}
 }
+.bullhorn-apply {
+	padding: 45px 0;
+	@media (min-width: 768px) {
+		padding: 60px 0;
+	}
+	@media (min-width: 1367px) {
+		padding: 90px 0;
+	}
+	h2 {
+		margin-bottom: 30px;
+	}
+	&-form {
+		font-size: 16px;
+		&__field {
+			position: relative;
+			border-radius: 5px;
+			margin: 15px 0 30px;
+			input,
+			select,
+			textarea {
+				appearance: none;
+				color: colour("text");
+				font-size: 16px;
+				line-height: 1.4;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 15px 30px;
+				background-color: transparent;
+				border: none;
+				outline: none;
+				&::placeholder {
+					color: colour("dark-grey");
+				}
+				// @media (max-width: 1024px){
+				// 	padding: 15px 15px;
+				// }
+			}
+			&--input,
+			&--file,
+			&--textarea {
+				background: colour("white");
+				border: 2px solid colour("white");
+				&:hover,
+				&:focus-within {
+					border: 2px solid colour("grey");
+				}
+				i {
+					color: colour("red-orange");
+					margin: 0 30px;
+				}
+			}
+			&--select {
+				background: colour("white");
+				border: 2px solid colour("white");
+				position: relative;
+				&:hover,
+				&:focus-within {
+					border: 2px solid colour("grey");
+				}
+				select {
+					position: relative;
+					z-index: 1;
+				}
+				i {
+					align-items: center;
+					display: flex;
+					padding: 0 15px;
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					inset-inline-end: 0;
+					bottom: 0;
 
+				}
+
+			}
+			&--submit {
+				input {
+					background-color: colour("red-orange");
+					color: colour("white");
+					font-weight: 600;
+				}
+			}
+		}
+	}
+}
 .rtl {
 	.bullhorn-search-pagination {
 		&__button {

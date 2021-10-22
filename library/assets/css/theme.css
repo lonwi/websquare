@@ -6251,8 +6251,16 @@ a.text-dark:hover, a.text-dark:focus {
 .bullhorn {
   font-family: "Manrope", Sans-serif;
 }
+.bullhorn h1, .bullhorn h2, .bullhorn h3, .bullhorn h4, .bullhorn h5, .bullhorn h6 {
+  color: #26357C;
+}
 .bullhorn-search-form {
-  padding: 60px 0;
+  padding: 45px 0;
+}
+@media (min-width: 768px) {
+  .bullhorn-search-form {
+    padding: 60px 0;
+  }
 }
 .bullhorn-search-form__field {
   position: relative;
@@ -6276,20 +6284,20 @@ a.text-dark:hover, a.text-dark:focus {
   outline: none;
 }
 .bullhorn-search-form__field input::-webkit-input-placeholder, .bullhorn-search-form__field select::-webkit-input-placeholder {
-  color: #1C1C1B;
+  color: #ABABAB;
 }
 .bullhorn-search-form__field input::-moz-placeholder, .bullhorn-search-form__field select::-moz-placeholder {
-  color: #1C1C1B;
+  color: #ABABAB;
 }
 .bullhorn-search-form__field input:-ms-input-placeholder, .bullhorn-search-form__field select:-ms-input-placeholder {
-  color: #1C1C1B;
+  color: #ABABAB;
 }
 .bullhorn-search-form__field input::-ms-input-placeholder, .bullhorn-search-form__field select::-ms-input-placeholder {
-  color: #1C1C1B;
+  color: #ABABAB;
 }
 .bullhorn-search-form__field input::placeholder,
 .bullhorn-search-form__field select::placeholder {
-  color: #1C1C1B;
+  color: #ABABAB;
 }
 .bullhorn-search-form__field--input {
   background: #FFFFFF;
@@ -6452,6 +6460,20 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 700;
 }
 
+.bullhorn-job {
+  background: #FFFFFF;
+  padding: 45px 0;
+}
+@media (min-width: 768px) {
+  .bullhorn-job {
+    padding: 60px 0;
+  }
+}
+@media (min-width: 1367px) {
+  .bullhorn-job {
+    padding: 90px 0;
+  }
+}
 .bullhorn-job__title {
   color: #26357C;
   margin-bottom: 15px;
@@ -6467,6 +6489,107 @@ a.text-dark:hover, a.text-dark:focus {
 .bullhorn-job__description {
   color: #1C1C1B;
   font-size: 16px;
+}
+
+.bullhorn-apply {
+  padding: 45px 0;
+}
+@media (min-width: 768px) {
+  .bullhorn-apply {
+    padding: 60px 0;
+  }
+}
+@media (min-width: 1367px) {
+  .bullhorn-apply {
+    padding: 90px 0;
+  }
+}
+.bullhorn-apply h2 {
+  margin-bottom: 30px;
+}
+.bullhorn-apply-form {
+  font-size: 16px;
+}
+.bullhorn-apply-form__field {
+  position: relative;
+  border-radius: 5px;
+  margin: 15px 0 30px;
+}
+.bullhorn-apply-form__field input,
+.bullhorn-apply-form__field select,
+.bullhorn-apply-form__field textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #1C1C1B;
+  font-size: 16px;
+  line-height: 1.4;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 15px 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.bullhorn-apply-form__field input::-webkit-input-placeholder, .bullhorn-apply-form__field select::-webkit-input-placeholder, .bullhorn-apply-form__field textarea::-webkit-input-placeholder {
+  color: #ABABAB;
+}
+.bullhorn-apply-form__field input::-moz-placeholder, .bullhorn-apply-form__field select::-moz-placeholder, .bullhorn-apply-form__field textarea::-moz-placeholder {
+  color: #ABABAB;
+}
+.bullhorn-apply-form__field input:-ms-input-placeholder, .bullhorn-apply-form__field select:-ms-input-placeholder, .bullhorn-apply-form__field textarea:-ms-input-placeholder {
+  color: #ABABAB;
+}
+.bullhorn-apply-form__field input::-ms-input-placeholder, .bullhorn-apply-form__field select::-ms-input-placeholder, .bullhorn-apply-form__field textarea::-ms-input-placeholder {
+  color: #ABABAB;
+}
+.bullhorn-apply-form__field input::placeholder,
+.bullhorn-apply-form__field select::placeholder,
+.bullhorn-apply-form__field textarea::placeholder {
+  color: #ABABAB;
+}
+.bullhorn-apply-form__field--input, .bullhorn-apply-form__field--file, .bullhorn-apply-form__field--textarea {
+  background: #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+.bullhorn-apply-form__field--input:hover, .bullhorn-apply-form__field--input:focus-within, .bullhorn-apply-form__field--file:hover, .bullhorn-apply-form__field--file:focus-within, .bullhorn-apply-form__field--textarea:hover, .bullhorn-apply-form__field--textarea:focus-within {
+  border: 2px solid #F1F2F4;
+}
+.bullhorn-apply-form__field--input i, .bullhorn-apply-form__field--file i, .bullhorn-apply-form__field--textarea i {
+  color: #DA4D14;
+  margin: 0 30px;
+}
+.bullhorn-apply-form__field--select {
+  background: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  position: relative;
+}
+.bullhorn-apply-form__field--select:hover, .bullhorn-apply-form__field--select:focus-within {
+  border: 2px solid #F1F2F4;
+}
+.bullhorn-apply-form__field--select select {
+  position: relative;
+  z-index: 1;
+}
+.bullhorn-apply-form__field--select i {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 15px;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  inset-inline-end: 0;
+  bottom: 0;
+}
+.bullhorn-apply-form__field--submit input {
+  background-color: #DA4D14;
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 .rtl .bullhorn-search-pagination__button i {

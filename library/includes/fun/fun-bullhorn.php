@@ -30,7 +30,7 @@ if (!function_exists('bh_job_apply_function')) {
 	function bh_job_apply_function()
 	{
 		ob_start();
-		// include_once(get_template_directory() . '/bullhorn/bh-job-apply.php');
+		include_once(get_template_directory() . '/bullhorn/bh-job-apply.php');
 		return ob_get_clean();
 	}
 }
