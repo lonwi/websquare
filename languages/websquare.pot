@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-22T15:05:47+00:00\n"
+"POT-Creation-Date: 2021-10-22T15:56:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: websquare\n"
@@ -23,86 +23,86 @@ msgstr ""
 msgid "Job Function"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:182
+#: bullhorn/bh-job-apply.php:180
 #: bullhorn/bh-job-item.php:159
 msgid "Your application has been successfully submitted."
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:184
+#: bullhorn/bh-job-apply.php:182
 #: bullhorn/bh-job-item.php:161
 msgid "You will be receiving a confirmation email shortly."
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:198
+#: bullhorn/bh-job-apply.php:196
 #: bullhorn/bh-job-item.php:207
 msgid "First Name*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:200
+#: bullhorn/bh-job-apply.php:198
 #: bullhorn/bh-job-item.php:209
 msgid "First Name"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:205
+#: bullhorn/bh-job-apply.php:203
 #: bullhorn/bh-job-item.php:214
 msgid "Last Name*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:207
+#: bullhorn/bh-job-apply.php:205
 #: bullhorn/bh-job-item.php:216
 msgid "Last Name"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:212
+#: bullhorn/bh-job-apply.php:210
 #: bullhorn/bh-job-item.php:221
 msgid "Email Address*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:214
+#: bullhorn/bh-job-apply.php:212
 #: bullhorn/bh-job-item.php:223
 msgid "Email Address"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:219
+#: bullhorn/bh-job-apply.php:217
 #: bullhorn/bh-job-item.php:228
 msgid "Phone Number*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:221
+#: bullhorn/bh-job-apply.php:219
 #: bullhorn/bh-job-item.php:230
 msgid "Phone Number"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:226
+#: bullhorn/bh-job-apply.php:224
 #: bullhorn/bh-job-item.php:235
 msgid "Date of Birth*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:243
+#: bullhorn/bh-job-apply.php:236
 #: bullhorn/bh-job-item.php:252
 msgid "Day"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:261
+#: bullhorn/bh-job-apply.php:252
 #: bullhorn/bh-job-item.php:270
 msgid "Month"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:282
+#: bullhorn/bh-job-apply.php:268
 #: bullhorn/bh-job-item.php:291
 msgid "Year"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:293
+#: bullhorn/bh-job-apply.php:280
 #: bullhorn/bh-job-item.php:302
 msgid "Residence Location*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:308
-#: bullhorn/bh-job-apply.php:331
-#: bullhorn/bh-job-apply.php:355
-#: bullhorn/bh-job-apply.php:374
-#: bullhorn/bh-job-apply.php:422
+#: bullhorn/bh-job-apply.php:289
+#: bullhorn/bh-job-apply.php:307
+#: bullhorn/bh-job-apply.php:325
+#: bullhorn/bh-job-apply.php:345
+#: bullhorn/bh-job-apply.php:389
 #: bullhorn/bh-job-item.php:317
 #: bullhorn/bh-job-item.php:340
 #: bullhorn/bh-job-item.php:364
@@ -111,56 +111,56 @@ msgstr ""
 msgid "Please Select"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:316
+#: bullhorn/bh-job-apply.php:298
 #: bullhorn/bh-job-item.php:325
 msgid "Nationality / Citizenship*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:339
+#: bullhorn/bh-job-apply.php:316
 #: bullhorn/bh-job-item.php:348
 msgid "Years of Experience*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:363
+#: bullhorn/bh-job-apply.php:336
 #: bullhorn/bh-job-item.php:372
 msgid "Notice Period*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:382
+#: bullhorn/bh-job-apply.php:354
 #: bullhorn/bh-job-item.php:391
 msgid "Current / Last Job Title*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:384
+#: bullhorn/bh-job-apply.php:356
 #: bullhorn/bh-job-item.php:393
 msgid "Current / Last Job Title"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:389
+#: bullhorn/bh-job-apply.php:361
 #: bullhorn/bh-job-item.php:398
 msgid "Industry*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:411
+#: bullhorn/bh-job-apply.php:380
 #: bullhorn/bh-job-item.php:420
 msgid "Visa Type*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:430
+#: bullhorn/bh-job-apply.php:398
 #: bullhorn/bh-job-item.php:439
 msgid "Upload CV*:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:438
+#: bullhorn/bh-job-apply.php:406
 msgid "Add a message:"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:440
+#: bullhorn/bh-job-apply.php:408
 #: bullhorn/bh-job-item.php:449
 msgid "Comments"
 msgstr ""
 
-#: bullhorn/bh-job-apply.php:446
+#: bullhorn/bh-job-apply.php:414
 #: bullhorn/bh-job-item.php:455
 msgid "Submit"
 msgstr ""

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Websquare 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/websquare\n"
-"POT-Creation-Date: 2021-10-22T15:05:47+00:00\n"
-"PO-Revision-Date: 2021-10-22 16:15+0100\n"
+"POT-Creation-Date: 2021-10-22T15:56:31+00:00\n"
+"PO-Revision-Date: 2021-10-22 16:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -26,115 +26,115 @@ msgstr "‫Websquare"
 msgid "Job Function"
 msgstr "وظيفة الوظيفة"
 
-#: bullhorn/bh-job-apply.php:182 bullhorn/bh-job-item.php:159
+#: bullhorn/bh-job-apply.php:180 bullhorn/bh-job-item.php:159
 msgid "Your application has been successfully submitted."
 msgstr "تم تقديم طلبك بنجاح."
 
-#: bullhorn/bh-job-apply.php:184 bullhorn/bh-job-item.php:161
+#: bullhorn/bh-job-apply.php:182 bullhorn/bh-job-item.php:161
 msgid "You will be receiving a confirmation email shortly."
 msgstr "ستتلقى رسالة تأكيد بالبريد الإلكتروني قريبًا."
 
-#: bullhorn/bh-job-apply.php:198 bullhorn/bh-job-item.php:207
+#: bullhorn/bh-job-apply.php:196 bullhorn/bh-job-item.php:207
 msgid "First Name*:"
 msgstr "الاسم الأول*:"
 
-#: bullhorn/bh-job-apply.php:200 bullhorn/bh-job-item.php:209
+#: bullhorn/bh-job-apply.php:198 bullhorn/bh-job-item.php:209
 msgid "First Name"
 msgstr "الاسم الأول"
 
-#: bullhorn/bh-job-apply.php:205 bullhorn/bh-job-item.php:214
+#: bullhorn/bh-job-apply.php:203 bullhorn/bh-job-item.php:214
 msgid "Last Name*:"
 msgstr "الكنية*:"
 
-#: bullhorn/bh-job-apply.php:207 bullhorn/bh-job-item.php:216
+#: bullhorn/bh-job-apply.php:205 bullhorn/bh-job-item.php:216
 msgid "Last Name"
 msgstr "الكنية"
 
-#: bullhorn/bh-job-apply.php:212 bullhorn/bh-job-item.php:221
+#: bullhorn/bh-job-apply.php:210 bullhorn/bh-job-item.php:221
 msgid "Email Address*:"
 msgstr "عنوان البريد الإلكتروني*:"
 
-#: bullhorn/bh-job-apply.php:214 bullhorn/bh-job-item.php:223
+#: bullhorn/bh-job-apply.php:212 bullhorn/bh-job-item.php:223
 msgid "Email Address"
 msgstr "عنوان البريد الإلكتروني"
 
-#: bullhorn/bh-job-apply.php:219 bullhorn/bh-job-item.php:228
+#: bullhorn/bh-job-apply.php:217 bullhorn/bh-job-item.php:228
 msgid "Phone Number*:"
 msgstr "رقم الهاتف*:"
 
-#: bullhorn/bh-job-apply.php:221 bullhorn/bh-job-item.php:230
+#: bullhorn/bh-job-apply.php:219 bullhorn/bh-job-item.php:230
 msgid "Phone Number"
 msgstr "رقم الهاتف"
 
-#: bullhorn/bh-job-apply.php:226 bullhorn/bh-job-item.php:235
+#: bullhorn/bh-job-apply.php:224 bullhorn/bh-job-item.php:235
 msgid "Date of Birth*:"
 msgstr "تاريخ الولادة*:"
 
-#: bullhorn/bh-job-apply.php:243 bullhorn/bh-job-item.php:252
+#: bullhorn/bh-job-apply.php:236 bullhorn/bh-job-item.php:252
 msgid "Day"
 msgstr "يوم"
 
-#: bullhorn/bh-job-apply.php:261 bullhorn/bh-job-item.php:270
+#: bullhorn/bh-job-apply.php:252 bullhorn/bh-job-item.php:270
 msgid "Month"
 msgstr "شهر"
 
-#: bullhorn/bh-job-apply.php:282 bullhorn/bh-job-item.php:291
+#: bullhorn/bh-job-apply.php:268 bullhorn/bh-job-item.php:291
 msgid "Year"
 msgstr "عام"
 
-#: bullhorn/bh-job-apply.php:293 bullhorn/bh-job-item.php:302
+#: bullhorn/bh-job-apply.php:280 bullhorn/bh-job-item.php:302
 msgid "Residence Location*:"
 msgstr "موقع السكن*:"
 
-#: bullhorn/bh-job-apply.php:308 bullhorn/bh-job-apply.php:331
-#: bullhorn/bh-job-apply.php:355 bullhorn/bh-job-apply.php:374
-#: bullhorn/bh-job-apply.php:422 bullhorn/bh-job-item.php:317
+#: bullhorn/bh-job-apply.php:289 bullhorn/bh-job-apply.php:307
+#: bullhorn/bh-job-apply.php:325 bullhorn/bh-job-apply.php:345
+#: bullhorn/bh-job-apply.php:389 bullhorn/bh-job-item.php:317
 #: bullhorn/bh-job-item.php:340 bullhorn/bh-job-item.php:364
 #: bullhorn/bh-job-item.php:383 bullhorn/bh-job-item.php:431
 msgid "Please Select"
 msgstr "الرجاء التحديد"
 
-#: bullhorn/bh-job-apply.php:316 bullhorn/bh-job-item.php:325
+#: bullhorn/bh-job-apply.php:298 bullhorn/bh-job-item.php:325
 msgid "Nationality / Citizenship*:"
 msgstr "الجنسية*:"
 
-#: bullhorn/bh-job-apply.php:339 bullhorn/bh-job-item.php:348
+#: bullhorn/bh-job-apply.php:316 bullhorn/bh-job-item.php:348
 msgid "Years of Experience*:"
 msgstr "سنوات من الخبرة*:"
 
-#: bullhorn/bh-job-apply.php:363 bullhorn/bh-job-item.php:372
+#: bullhorn/bh-job-apply.php:336 bullhorn/bh-job-item.php:372
 msgid "Notice Period*:"
 msgstr "فترة إشعار*:"
 
-#: bullhorn/bh-job-apply.php:382 bullhorn/bh-job-item.php:391
+#: bullhorn/bh-job-apply.php:354 bullhorn/bh-job-item.php:391
 msgid "Current / Last Job Title*:"
 msgstr "المسمى الوظيفي الحالي / الأخير *:"
 
-#: bullhorn/bh-job-apply.php:384 bullhorn/bh-job-item.php:393
+#: bullhorn/bh-job-apply.php:356 bullhorn/bh-job-item.php:393
 msgid "Current / Last Job Title"
 msgstr "الوظيفة الحالية / الأخيرة"
 
-#: bullhorn/bh-job-apply.php:389 bullhorn/bh-job-item.php:398
+#: bullhorn/bh-job-apply.php:361 bullhorn/bh-job-item.php:398
 msgid "Industry*:"
 msgstr "صناعة*:"
 
-#: bullhorn/bh-job-apply.php:411 bullhorn/bh-job-item.php:420
+#: bullhorn/bh-job-apply.php:380 bullhorn/bh-job-item.php:420
 msgid "Visa Type*:"
 msgstr "نوع الفيزا*:"
 
-#: bullhorn/bh-job-apply.php:430 bullhorn/bh-job-item.php:439
+#: bullhorn/bh-job-apply.php:398 bullhorn/bh-job-item.php:439
 msgid "Upload CV*:"
 msgstr "تحميل السيرة الذاتية*:"
 
-#: bullhorn/bh-job-apply.php:438
+#: bullhorn/bh-job-apply.php:406
 msgid "Add a message:"
 msgstr "اضف رسالة:"
 
-#: bullhorn/bh-job-apply.php:440 bullhorn/bh-job-item.php:449
+#: bullhorn/bh-job-apply.php:408 bullhorn/bh-job-item.php:449
 msgid "Comments"
 msgstr "تعليقات"
 
-#: bullhorn/bh-job-apply.php:446 bullhorn/bh-job-item.php:455
+#: bullhorn/bh-job-apply.php:414 bullhorn/bh-job-item.php:455
 msgid "Submit"
 msgstr "يقدم"
 
