@@ -3,40 +3,23 @@ if (!class_exists('BullHorn_Factory')) {
 	die('bullhorn plugin must be activated');
 }
 
-use SquareChilli\Bullhorn\Bullhorn;
-use SquareChilli\Bullhorn\Client;
-use SquareChilli\Bullhorn\components\Logger;
-use SquareChilli\Bullhorn\helpers\DevHelper;
-use SquareChilli\Bullhorn\helpers\Smarty;
-use SquareChilli\Bullhorn\models\Application;
-
-include_once(get_template_directory() . '/bullhorn/bh-form-filters.php');
-
 $api = BullHorn_Factory::Get()->get_api();
-
-$bhFormFilters     = BhFormFilters::instance();
-$formFilterMachine = $bhFormFilters->getFilterMachine();
-
 $filterMachine = FilterMachine::create([
 	Filter::create('jobId')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?job/(\d+)~')->minimum(1),
-	//Filter::create( 'jobId' )->cast( 'int' )->wpParam( 'bullhorn_joborder_id' )->minimum( 1 ),
 ]);
-
 
 try {
 	$jobIdFilter = $filterMachine->getFilter('jobId');
 	$jobId       = $jobIdFilter->getValue();
 	if (empty($jobId)) {
-		wp_redirect('/recruiting/explore-job-opportunities/');
+		// wp_redirect('/recruiting/explore-job-opportunities/');
 		exit;
 	}
 	$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
 	if (empty($jobOrder)) {
 		throw new \Exception(sprintf('Could not find job by ID "%s"', $jobId));
 	}
-	add_filter('single_post_title', function ($data) use ($jobOrder) {
-		return sprintf('Job / %s', $jobOrder->title);
-	});
+
 } catch (\Exception $e) {
 	$errorMessage = $e->getMessage();
 	if (!empty($_COOKIE['applyDebug'])) {
