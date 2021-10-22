@@ -160,12 +160,7 @@ if (!empty($_FILES['candidate-application'])) {
 
 $applicationFormSubmitted = null;
 if (!empty($_POST)) {
-	$g_recaptcha_response = trim($_POST['g-recaptcha-response']);
-	if (($udesign_options['recaptcha_enabled'] == 'yes') && (!$captcha_verified || $g_recaptcha_response == '')) {
-		$recaptchaError = __('Please respond to the reCAPTCHA question', 'udesign');
-	} else {
-		$applicationFormSubmitted = $applicationForm->submitApplication();
-	}
+	$applicationFormSubmitted = $applicationForm->submitApplication();
 }
 ?>
 
