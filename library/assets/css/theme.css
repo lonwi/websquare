@@ -6592,6 +6592,37 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 600;
 }
 
+.bullhorn-error,
+.bullhorn-thank-you {
+  background: #FFFFFF;
+  padding: 120px 0;
+}
+@media (max-width: 767px) {
+  .bullhorn-error,
+.bullhorn-thank-you {
+    padding: 45px 0;
+  }
+}
+@media (max-width: 1366px) {
+  .bullhorn-error,
+.bullhorn-thank-you {
+    padding: 60px 0;
+  }
+}
+.bullhorn-error h1,
+.bullhorn-thank-you h1 {
+  color: #DA4D14;
+}
+.bullhorn-error p,
+.bullhorn-thank-you p {
+  font-size: 1.4rem;
+}
+.bullhorn-error i,
+.bullhorn-thank-you i {
+  color: #DA4D14;
+  font-size: 4rem;
+}
+
 .rtl .bullhorn-search-pagination__button i {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);

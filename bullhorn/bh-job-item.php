@@ -51,12 +51,11 @@ try {
 	$jobIdFilter = $filterMachine->getFilter('jobId');
 	$jobId       = $jobIdFilter->getValue();
 
-	if (empty($jobId)) {
-		// wp_redirect('/recruiting/explore-job-opportunities/');
-		// exit;
+	if (!empty($jobId)) {
+		$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
 	}
-	$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
-	if (!empty($jobOrder)) {
+
+	if (isset($jobOrder) && !empty($jobOrder)) {
 		$jobOrderModel = $jobOrder->GetModel();
 		// $metaMachine = Bullhorn::instance()->metaMachine()->openGraphJob($jobOrderModel);
 		// $metaMachine->addProperty('og:description', 'HRInvest');
@@ -113,16 +112,22 @@ try {
 		echo '<pre>' . print_r(HtmlHelper::encode($errorMessage), true) . '</pre>';
 	}
 }
+$applied = true;
 ?>
 
-
-
 <?php if (empty($jobOrder) && empty($errorMessage)) : ?>
-	<section class="bullhorn bullhorn-job">
+	<section class="bullhorn bullhorn-error">
 		<div class="container">
-			<h1 class="elementor-heading-title elementor-size-default">
-				<?php esc_html_e('Vacancy details not found!', 'websquare'); ?>
-			</h1>
+			<div class="row d-flex align-items-center">
+				<div class="col-auto">
+					<i class="fas fa-exclamation-triangle"></i>
+				</div>
+				<div class="col">
+					<h1 class="elementor-heading-title elementor-size-default">
+						<?php esc_html_e('Vacancy details not found!', 'websquare'); ?>
+					</h1>
+				</div>
+			</div>
 		</div>
 	</section>
 <?php endif; ?>
@@ -130,7 +135,14 @@ try {
 <?php if (!empty($errorMessage)) : ?>
 	<section class="bullhorn bullhorn-error">
 		<div class="container">
-			<p><?= HtmlHelper::encode($errorMessage) ?></p>
+			<div class="row d-flex align-items-center">
+				<div class="col-auto">
+					<i class="fas fa-exclamation-triangle"></i>
+				</div>
+				<div class="col">
+					<p><?= HtmlHelper::encode($errorMessage) ?></p>
+				</div>
+			</div>
 		</div>
 	</section>
 <?php endif; ?>
@@ -139,10 +151,17 @@ try {
 	<?php if ($applied) : ?>
 		<section class="bullhorn bullhorn-thank-you">
 			<div class="container">
-				<h1 class="elementor-heading-title elementor-size-default">
-					<?php esc_html_e('Your application has been successfully submitted.', 'websquare'); ?>
-				</h1>
-				<p><?php esc_html_e('You will be receiving a confirmation email shortly.', 'websquare'); ?></p>
+				<div class="row d-flex align-items-top">
+					<div class="col-auto">
+						<i class="fas fa-check"></i>
+					</div>
+					<div class="col">
+						<h1 class="elementor-heading-title elementor-size-default">
+							<?php esc_html_e('Your application has been successfully submitted.', 'websquare'); ?>
+						</h1>
+						<p><?php esc_html_e('You will be receiving a confirmation email shortly.', 'websquare'); ?></p>
+					</div>
+				</div>
 			</div>
 		</section>
 	<?php else : ?>

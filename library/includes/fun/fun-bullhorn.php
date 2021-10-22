@@ -38,7 +38,7 @@ if (!function_exists('bh_job_apply_function')) {
 add_shortcode('bh_job_apply', 'bh_job_apply_function');
 
 
-add_filter('document_title_parts', function($titles){
+add_filter('document_title_parts', function ($titles) {
 	$api = BullHorn_Factory::Get()->get_api();
 	$filterMachine = FilterMachine::create([
 		Filter::create('jobId')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?job/(\d+)~')->minimum(1),
@@ -47,7 +47,11 @@ add_filter('document_title_parts', function($titles){
 	$jobId       = $jobIdFilter->getValue();
 	if (!empty($jobId)) {
 		$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
-		$titles['title'] = sprintf( __( 'Vacancy: %s', 'websquare' ), $jobOrder->title );
+		if (isset($jobOrder) && !empty($jobOrder)) {
+			$titles['title'] = sprintf(__('Vacancy: %s', 'websquare'), $jobOrder->title);
+		} else {
+			$titles['title'] = __('Vacancy not found', 'websquare');
+		}
 	}
 	return $titles;
 });
