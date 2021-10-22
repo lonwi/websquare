@@ -20,6 +20,9 @@ $bhFormFilters     = BhFormFilters::instance();
 $formFilterMachine = $bhFormFilters->getFilterMachine();
 $cvFile = $postData = null;
 $submittedApplication = false;
+
+class BaseDataClass {
+}
 class ApplicationForm extends RawForm
 {
 	#customText4 = Notice Period
