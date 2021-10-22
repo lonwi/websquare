@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-21T16:18:14+00:00\n"
+"POT-Creation-Date: 2021-10-22T15:05:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: websquare\n"
@@ -23,30 +23,204 @@ msgstr ""
 msgid "Job Function"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:137
+#: bullhorn/bh-job-apply.php:182
+#: bullhorn/bh-job-item.php:159
+msgid "Your application has been successfully submitted."
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:184
+#: bullhorn/bh-job-item.php:161
+msgid "You will be receiving a confirmation email shortly."
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:198
+#: bullhorn/bh-job-item.php:207
+msgid "First Name*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:200
+#: bullhorn/bh-job-item.php:209
+msgid "First Name"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:205
+#: bullhorn/bh-job-item.php:214
+msgid "Last Name*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:207
+#: bullhorn/bh-job-item.php:216
+msgid "Last Name"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:212
+#: bullhorn/bh-job-item.php:221
+msgid "Email Address*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:214
+#: bullhorn/bh-job-item.php:223
+msgid "Email Address"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:219
+#: bullhorn/bh-job-item.php:228
+msgid "Phone Number*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:221
+#: bullhorn/bh-job-item.php:230
+msgid "Phone Number"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:226
+#: bullhorn/bh-job-item.php:235
+msgid "Date of Birth*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:243
+#: bullhorn/bh-job-item.php:252
+msgid "Day"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:261
+#: bullhorn/bh-job-item.php:270
+msgid "Month"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:282
+#: bullhorn/bh-job-item.php:291
+msgid "Year"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:293
+#: bullhorn/bh-job-item.php:302
+msgid "Residence Location*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:308
+#: bullhorn/bh-job-apply.php:331
+#: bullhorn/bh-job-apply.php:355
+#: bullhorn/bh-job-apply.php:374
+#: bullhorn/bh-job-apply.php:422
+#: bullhorn/bh-job-item.php:317
+#: bullhorn/bh-job-item.php:340
+#: bullhorn/bh-job-item.php:364
+#: bullhorn/bh-job-item.php:383
+#: bullhorn/bh-job-item.php:431
+msgid "Please Select"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:316
+#: bullhorn/bh-job-item.php:325
+msgid "Nationality / Citizenship*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:339
+#: bullhorn/bh-job-item.php:348
+msgid "Years of Experience*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:363
+#: bullhorn/bh-job-item.php:372
+msgid "Notice Period*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:382
+#: bullhorn/bh-job-item.php:391
+msgid "Current / Last Job Title*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:384
+#: bullhorn/bh-job-item.php:393
+msgid "Current / Last Job Title"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:389
+#: bullhorn/bh-job-item.php:398
+msgid "Industry*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:411
+#: bullhorn/bh-job-item.php:420
+msgid "Visa Type*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:430
+#: bullhorn/bh-job-item.php:439
+msgid "Upload CV*:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:438
+msgid "Add a message:"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:440
+#: bullhorn/bh-job-item.php:449
+msgid "Comments"
+msgstr ""
+
+#: bullhorn/bh-job-apply.php:446
+#: bullhorn/bh-job-item.php:455
+msgid "Submit"
+msgstr ""
+
+#: bullhorn/bh-job-item.php:126
+msgid "Vacancy details not found!"
+msgstr ""
+
+#: bullhorn/bh-job-item.php:178
+msgid "Location: "
+msgstr ""
+
+#: bullhorn/bh-job-item.php:184
+msgid "Date Posted: "
+msgstr ""
+
+#: bullhorn/bh-job-item.php:199
+msgid "Apply for this Vacancy"
+msgstr ""
+
+#: bullhorn/bh-job-item.php:441
+msgid "Upload CV"
+msgstr ""
+
+#: bullhorn/bh-job-item.php:447
+msgid "Add a message*:"
+msgstr ""
+
+#: bullhorn/bh-job-list.php:70
 msgid "Keywords"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:169
+#: bullhorn/bh-job-list.php:102
 msgid "Business Sector"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:178
+#: bullhorn/bh-job-list.php:111
 msgid "Search"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:191
+#: bullhorn/bh-job-list.php:124
 msgid "Your search found no jobs within our database. Try broadening your search or contact us to discuss your job requirements."
 msgstr ""
 
-#: bullhorn/bh-job-list.php:221
+#: bullhorn/bh-job-list.php:154
 msgid " ago"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:247
+#: bullhorn/bh-job-list.php:180
 msgid "Previous Page"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:279
+#: bullhorn/bh-job-list.php:212
 msgid "Next Page"
+msgstr ""
+
+#: library/includes/fun/fun-bullhorn.php:51
+msgid "Vacancy: %s"
+msgstr ""
+
+#: library/includes/fun/fun-bullhorn.php:53
+msgid "Vacancy not found"
 msgstr ""
