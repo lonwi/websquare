@@ -6204,6 +6204,12 @@ a.text-dark:hover, a.text-dark:focus {
 .header-navigation-main > li > ul > li > ul > li > ul > li:hover > ul {
   display: block;
 }
+.rtl .header-navigation-main a i {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  float: left;
+}
+
 .section-content__image {
   min-height: 250px !important;
 }

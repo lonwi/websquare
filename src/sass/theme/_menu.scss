@@ -192,3 +192,14 @@
 		}
 	}
 }
+
+.rtl {
+	.header-navigation-main {
+		a {
+			i {
+				transform: rotate(180deg);
+				float: left;
+			}
+		}
+	}
+}
