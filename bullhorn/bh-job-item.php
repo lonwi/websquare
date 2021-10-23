@@ -10,6 +10,15 @@ use SquareChilli\Bullhorn\helpers\DevHelper;
 use SquareChilli\Bullhorn\helpers\Smarty;
 use SquareChilli\Bullhorn\models\Application;
 
+$recaptcha_v3_site_key = get_option('elementor_pro_recaptcha_v3_site_key');
+$recaptcha_v3_secret_key = get_option('elementor_pro_recaptcha_v3_secret_key');
+$recaptcha_v3_threshold = get_option('elementor_pro_recaptcha_v3_threshold');
+
+if (!empty($recaptcha_v3_site_key) && !empty($recaptcha_v3_secret_key)) {
+	wp_enqueue_script('elementor-recaptcha_v3-api-js');
+	$recaptcha_v3 = true;
+}
+
 $api = BullHorn_Factory::Get()->get_api();
 
 include_once(get_template_directory() . '/bullhorn/bh-form-filters.php');
@@ -64,47 +73,71 @@ try {
 
 		if (!empty($_POST['submit'])) {
 
-			if (empty($_FILES['job-apply-cv'])) {
-				$_FILES['job-apply-cv'] = array(
-					'tmp_name' => null,
-					'filename' => null,
-					'error' => 4, // no file uploaded
-					'type' => null,
-					'size' => 0,
-				);
+			if (isset($recaptcha_v3)) {
+				$token = $_POST['token'];
+				$action = $_POST['action'];
+
+				// call curl to POST request
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+				curl_setopt($ch, CURLOPT_POST, 1);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => $recaptcha_v3_secret_key, 'response' => $token)));
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				$response = curl_exec($ch);
+				curl_close($ch);
+				$arrResponse = json_decode($response, true);
 			}
 
-			$applyResult = $jobOrder->SubmitApplication($_POST, $_FILES['job-apply-cv']);
-			if (!empty($_COOKIE['applyDebug'])) {
-				echo '<pre>' . print_r($applyResult, true) . '</pre>';
-			}
-			// print_result($jobOrder);
-			if ($applyResult) {
-				$application = Application::findByPk($applyResult->id);
-				$applicationUser = $application->getUser();
+			// verify the response
+			if (!isset($recaptcha_v3) || ($arrResponse["success"] == '1' && $arrResponse["action"] == $action && $arrResponse["score"] >= $recaptcha_v3_threshold)) {
+				// valid submission
+				// go ahead and do necessary stuff
 
-				if (!empty($applicationUser->email)) {
-					$email = Client::instance()->config()->getEmailConfig()->getEmail('thankYouJobOrder');
-					$email->setData([
-						'application' => $application,
-						'applicationUser' => $applicationUser,
-						'jobOrder' => $jobOrderModel,
-					]);
-					$email->sendTo($applicationUser->email);
+				if (empty($_FILES['job-apply-cv'])) {
+					$_FILES['job-apply-cv'] = array(
+						'tmp_name' => null,
+						'filename' => null,
+						'error' => 4, // no file uploaded
+						'type' => null,
+						'size' => 0,
+					);
 				}
-				// $redirect_url = $jobOrder->getURL() . '?applied#applied';
-				// wp_redirect($redirect_url);
-				// exit;
-				$applied = true; // Sometimes the redirect simply fails
 
-			} else {
-				$applyError = BullHorn_Errors::toText($jobOrder->GetError(), $jobOrder->GetErrorExtended(), false);
-				$applyErrorExtended = $jobOrder->GetErrorExtended();
-
+				$applyResult = $jobOrder->SubmitApplication($_POST, $_FILES['job-apply-cv']);
 				if (!empty($_COOKIE['applyDebug'])) {
-					var_dump($applyError);
-					var_dump($applyErrorExtended);
+					echo '<pre>' . print_r($applyResult, true) . '</pre>';
 				}
+				// print_result($jobOrder);
+				if ($applyResult) {
+					$application = Application::findByPk($applyResult->id);
+					$applicationUser = $application->getUser();
+
+					if (!empty($applicationUser->email)) {
+						$email = Client::instance()->config()->getEmailConfig()->getEmail('thankYouJobOrder');
+						$email->setData([
+							'application' => $application,
+							'applicationUser' => $applicationUser,
+							'jobOrder' => $jobOrderModel,
+						]);
+						$email->sendTo($applicationUser->email);
+					}
+					// $redirect_url = $jobOrder->getURL() . '?applied#applied';
+					// wp_redirect($redirect_url);
+					// exit;
+					$applied = true; // Sometimes the redirect simply fails
+
+				} else {
+					$applyError = BullHorn_Errors::toText($jobOrder->GetError(), $jobOrder->GetErrorExtended(), false);
+					$applyErrorExtended = $jobOrder->GetErrorExtended();
+
+					if (!empty($_COOKIE['applyDebug'])) {
+						var_dump($applyError);
+						var_dump($applyErrorExtended);
+					}
+				}
+			} else {
+				// Captcha Failed
+				echo "<script>alert('Validation Failed');</script>";
 			}
 		}
 	}
@@ -196,12 +229,29 @@ try {
 			</div>
 		</section>
 
+		<?php if (isset($recaptcha_v3)) : ?>
+			<script>
+				$('#bullhorn-apply-form').submit(function(event) {
+					event.preventDefault();
+					grecaptcha.ready(function() {
+						grecaptcha.execute(<?= $recaptcha_v3_site_key ?>, {
+							action: 'apply'
+						}).then(function(token) {
+							$('#bullhorn-apply-form').prepend('<input type="hidden" name="token" value="' + token + '">');
+							$('#bullhorn-apply-form').prepend('<input type="hidden" name="action" value="apply">');
+							$('#bullhorn-apply-form').unbind('submit').submit();
+						});;
+					});
+				});
+			</script>
+		<?php endif; ?>
+
 		<section class="bullhorn bullhorn-apply">
 			<div class="container">
 				<h2 class="elementor-heading-title elementor-size-default"><?php esc_html_e('Apply for this Job', 'websquare'); ?></h2>
 			</div>
 
-			<form class="bullhorn-apply-form" method="post" enctype="multipart/form-data" action="<?= URI::getCurrent()->href() ?>" name="candidate-application">
+			<form id="bullhorn-apply-form" class="bullhorn-apply-form" method="post" enctype="multipart/form-data" action="<?= URI::getCurrent()->href() ?>" name="candidate-application">
 				<div class="container">
 					<div class="row">
 
