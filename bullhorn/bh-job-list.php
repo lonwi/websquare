@@ -130,7 +130,7 @@ $results = $jobQuery->all();
 		<div class="bullhorn-search-results--results">
 			<div class="container">
 				<?php foreach ($results as $job) : ?>
-					<a href='<?php echo $job->getURL(); ?>' rel="nofollow" class="bullhorn-search-results__item">
+					<a href='<?php echo bh_job_url_transform($job->getURL()); ?>' rel="nofollow" class="bullhorn-search-results__item">
 						<div class="row">
 							<div class="col-md-5">
 								<div class="bullhorn-search-results__item--job-title">
