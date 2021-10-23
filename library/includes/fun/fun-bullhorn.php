@@ -48,9 +48,9 @@ add_filter('document_title_parts', function ($titles) {
 	if (!empty($jobId)) {
 		$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
 		if (isset($jobOrder) && !empty($jobOrder)) {
-			$titles['title'] = sprintf(__('Vacancy: %s', 'websquare'), $jobOrder->title);
+			$titles['title'] = sprintf(__('Job: %s', 'websquare'), $jobOrder->title);
 		} else {
-			$titles['title'] = __('Vacancy not found', 'websquare');
+			$titles['title'] = __('Job not found', 'websquare');
 		}
 	}
 	return $titles;

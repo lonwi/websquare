@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Websquare 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/websquare\n"
-"POT-Creation-Date: 2021-10-22T15:56:31+00:00\n"
-"PO-Revision-Date: 2021-10-22 16:56+0100\n"
+"POT-Creation-Date: 2021-10-23T09:25:47+00:00\n"
+"PO-Revision-Date: 2021-10-23 10:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
@@ -139,8 +139,8 @@ msgid "Submit"
 msgstr "يقدم"
 
 #: bullhorn/bh-job-item.php:126
-msgid "Vacancy details not found!"
-msgstr "تفاصيل الوظيفة غير موجودة!"
+msgid "Job details not found!"
+msgstr "لم يتم العثور على تفاصيل الوظيفة!"
 
 #: bullhorn/bh-job-item.php:178
 msgid "Location: "
@@ -151,8 +151,8 @@ msgid "Date Posted: "
 msgstr "تاريخ الإعلان: "
 
 #: bullhorn/bh-job-item.php:199
-msgid "Apply for this Vacancy"
-msgstr "تقدم لهذه الوظيفة الشاغرة"
+msgid "Apply for this Job"
+msgstr "تقدم بطلب للحصول على هذه الوظيفة"
 
 #: bullhorn/bh-job-item.php:441
 msgid "Upload CV"
@@ -195,9 +195,12 @@ msgid "Next Page"
 msgstr "الصفحة التالية"
 
 #: library/includes/fun/fun-bullhorn.php:51
-msgid "Vacancy: %s"
-msgstr "خالي: %s"
+msgid "Job: %s"
+msgstr "الوظيفة: %s"
 
 #: library/includes/fun/fun-bullhorn.php:53
-msgid "Vacancy not found"
-msgstr "لم يتم العثور على شاغر"
+msgid "Job not found"
+msgstr "لم يتم العثور على الوظيفة"
+
+#~ msgid "Vacancy: %s"
+#~ msgstr "خالي: %s"

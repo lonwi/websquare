@@ -123,7 +123,7 @@ try {
 				</div>
 				<div class="col">
 					<h1 class="elementor-heading-title elementor-size-default">
-						<?php esc_html_e('Vacancy details not found!', 'websquare'); ?>
+						<?php esc_html_e('Job details not found!', 'websquare'); ?>
 					</h1>
 				</div>
 			</div>
@@ -196,7 +196,7 @@ try {
 
 		<section class="bullhorn bullhorn-apply">
 			<div class="container">
-				<h2 class="elementor-heading-title elementor-size-default"><?php esc_html_e('Apply for this Vacancy', 'websquare'); ?></h2>
+				<h2 class="elementor-heading-title elementor-size-default"><?php esc_html_e('Apply for this Job', 'websquare'); ?></h2>
 			</div>
 
 			<form class="bullhorn-apply-form" method="post" enctype="multipart/form-data" action="<?= URI::getCurrent()->href() ?>" name="candidate-application">

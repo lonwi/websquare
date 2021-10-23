@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-22T15:56:31+00:00\n"
+"POT-Creation-Date: 2021-10-23T09:25:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: websquare\n"
@@ -166,7 +166,7 @@ msgid "Submit"
 msgstr ""
 
 #: bullhorn/bh-job-item.php:126
-msgid "Vacancy details not found!"
+msgid "Job details not found!"
 msgstr ""
 
 #: bullhorn/bh-job-item.php:178
@@ -178,7 +178,7 @@ msgid "Date Posted: "
 msgstr ""
 
 #: bullhorn/bh-job-item.php:199
-msgid "Apply for this Vacancy"
+msgid "Apply for this Job"
 msgstr ""
 
 #: bullhorn/bh-job-item.php:441
@@ -218,9 +218,9 @@ msgid "Next Page"
 msgstr ""
 
 #: library/includes/fun/fun-bullhorn.php:51
-msgid "Vacancy: %s"
+msgid "Job: %s"
 msgstr ""
 
 #: library/includes/fun/fun-bullhorn.php:53
-msgid "Vacancy not found"
+msgid "Job not found"
 msgstr ""
