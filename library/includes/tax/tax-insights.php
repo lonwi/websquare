@@ -18,7 +18,7 @@ function tax_insights()
 		$cpt['post_type'] . '_' . $tax['taxonomy_type'],
 		array($cpt['post_type']),
 		array(
-			'hierarchical' => false,
+			'hierarchical' => true,
 			'labels' => array(
 				'name'                       => $tax['plural'],
 				'singular_name'              => $tax['singular'],
@@ -43,8 +43,6 @@ function tax_insights()
 			'public'                => true,
 			'show_in_nav_menus'     => true,
 			'show_tagcloud'         => true,
-			'meta_box_cb'           => false,
-			'update_count_callback' => '_update_post_term_count',
 			'rewrite'               => array('slug' => $tax['slug'], 'with_front' => false)
 		)
 	);
