@@ -503,6 +503,9 @@ try {
 						</div>
 
 						<div class="col-md-6">
+							<?php if (isset($recaptcha_v3)) : ?>
+								<div id="bullhorn-apply-form__grecaptcha" class="bullhorn-apply-form__grecaptcha" data-sitekey="<?= $recaptcha_v3_site_key; ?>" data-type="v3" data-action="Form" data-badge="bottomright" data-size="invisible"></div>
+							<?php endif; ?>
 							<div class="bullhorn-apply-form__field bullhorn-apply-form__field--submit">
 								<input class="bullhorn-apply-form__submit" name="submit" type="submit" value="<?php esc_html_e('Submit', 'websquare'); ?>">
 							</div>
@@ -513,5 +516,29 @@ try {
 				</div>
 			</form>
 		</section>
+		<?php if (isset($recaptcha_v3)) : ?>
+			<script>
+				var form = jQuery('#bullhorn-apply-form');
+				form.submit(function(event) {
+					event.preventDefault();
+					var captcha = jQuery('#bullhorn-apply-form__grecaptcha');
+					var settings = captcha.data();
+					var widgetId = window.grecaptcha.render(captcha[0], settings);
+					form.on('reset error', function() {
+						window.grecaptcha.reset(widgetId);
+					});
+
+					window.grecaptcha.ready(function() {
+						window.grecaptcha.execute(widgetId, {
+							action: 'apply'
+						}).then(function(token) {
+							form.prepend('<input type="hidden" name="token" value="' + token + '">');
+							form.prepend('<input type="hidden" name="action" value="apply">');
+							form.unbind('submit').submit();
+						});;
+					});
+				});
+			</script>
+		<?php endif; ?>
 	<?php endif; ?>
 <?php endif; ?>
