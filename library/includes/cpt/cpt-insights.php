@@ -35,6 +35,7 @@ if (!function_exists('cpt_insights')) {
 				'show_in_menu'       => true,
 				'publicly_queryable' => true,
 				'has_archive'        => false,
+				'taxonomies'		 => array('insights_category'),
 				'rewrite'            => array(
 					'slug' => $cpt['slug'] . '/%insights_category%',
 					'with_front' => false,
