@@ -490,7 +490,7 @@ try {
 						<div class="col-md-6">
 							<label for="job-apply-cv" class="bullhorn-apply-form__label"><?php esc_html_e('Upload CV*:', 'websquare'); ?></label>
 							<div class="bullhorn-apply-form__field bullhorn-apply-form__field--file">
-								<input type="file" id="job-apply-cv" name="job-apply-cv" placeholder="<?php esc_html_e('Upload CV', 'websquare'); ?>" required="true">
+								<input type="file" id="job-apply-cv" name="job-apply-cv" placeholder="<?php esc_html_e('Upload CV', 'websquare'); ?>" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.pdf,.doc,.docx,.txt" required="true">
 							</div>
 						</div>
 
