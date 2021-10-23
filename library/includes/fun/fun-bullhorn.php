@@ -58,6 +58,7 @@ add_filter('document_title_parts', function ($titles) {
 
 function bh_job_rewrite_rule()
 {
-	add_rewrite_rule('job/([0-9]{1,})/(.*)$', 'index.php?pagename=job&jobId=$matches[1]', 'top');
+	add_rewrite_rule('^job/([0-9]{1,})/(.*)$', 'index.php?pagename=job&jobId=$matches[1]', 'top');
+	add_rewrite_rule('^ar/job/([0-9]{1,})/(.*)$', 'index.php?pagename=job&jobId=$matches[1]', 'top');
 }
 add_action('init', 'bh_job_rewrite_rule', 10, 0);
