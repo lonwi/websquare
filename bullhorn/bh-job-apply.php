@@ -166,9 +166,9 @@ if (!empty($_POST['candidate-application'])) {
 	$applicationForm->loadData($_POST['candidate-application']);
 	$applicationForm->loadDOB();
 }
-print_result($_FILES);
+
 if (!empty($_FILES['candidate-application'])) {
-	$applicationForm->loadData(File::normalize($_FILES['candidate-application']['resume']));
+	$applicationForm->loadData(File::normalize($_FILES['candidate-application']));
 }
 
 $applicationFormSubmitted = null;
