@@ -234,7 +234,7 @@ try {
 				$('#bullhorn-apply-form').submit(function(event) {
 					event.preventDefault();
 					grecaptcha.ready(function() {
-						grecaptcha.execute(<?= $recaptcha_v3_site_key ?>, {
+						grecaptcha.execute('<?= $recaptcha_v3_site_key ?>', {
 							action: 'apply'
 						}).then(function(token) {
 							$('#bullhorn-apply-form').prepend('<input type="hidden" name="token" value="' + token + '">');
