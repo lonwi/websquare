@@ -18,7 +18,7 @@ $formFilterMachine = $bhFormFilters->getFilterMachine();
 
 $filterMachine = FilterMachine::create([
 	Filter::create('jobId')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?job/(\d+)~')->minimum(1),
-	Filter::create('jobIdAR')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?w+/?job/(\d+)~')->minimum(1),
+	Filter::create('jobIdAR')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?\w+/?job/(\d+)~')->minimum(1),
 	Filter::create('apply')->regex('~/apply/*$~i'),
 	Filter::create('applied'),
 	Filter::create('job-apply-name')->methods(Filter::METHOD_POST),
