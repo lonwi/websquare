@@ -168,7 +168,7 @@ if (!empty($_POST['candidate-application'])) {
 }
 
 if (!empty($_FILES['candidate-application'])) {
-	$applicationForm->loadData(File::normalize($_FILES['candidate-application']));
+	$applicationForm->loadData(File::normalize($_FILES['candidate-application']['resume']));
 }
 
 $applicationFormSubmitted = null;
