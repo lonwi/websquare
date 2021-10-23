@@ -18,6 +18,7 @@ $formFilterMachine = $bhFormFilters->getFilterMachine();
 
 $filterMachine = FilterMachine::create([
 	Filter::create('jobId')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?job/(\d+)~')->minimum(1),
+	Filter::create('jobIdAR')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?w+/?job/(\d+)~')->minimum(1),
 	Filter::create('apply')->regex('~/apply/*$~i'),
 	Filter::create('applied'),
 	Filter::create('job-apply-name')->methods(Filter::METHOD_POST),
@@ -49,7 +50,8 @@ $applied = $filterMachine->getFilter('applied')->exists();
 
 try {
 	$jobIdFilter = $filterMachine->getFilter('jobId');
-	$jobId       = $jobIdFilter->getValue();
+	$jobIdFilterAR = $filterMachine->getFilter('jobIdAR');
+	$jobId       = !empty($jobIdFilter->getValue()) ? $jobIdFilter->getValue() : $jobIdFilterAR->getValue();
 
 	if (!empty($jobId)) {
 		$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
