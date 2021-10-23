@@ -231,15 +231,15 @@ try {
 
 		<?php if (isset($recaptcha_v3)) : ?>
 			<script>
-				$('#bullhorn-apply-form').submit(function(event) {
+				jQuery('#bullhorn-apply-form').submit(function(event) {
 					event.preventDefault();
 					grecaptcha.ready(function() {
 						grecaptcha.execute('<?= $recaptcha_v3_site_key ?>', {
 							action: 'apply'
 						}).then(function(token) {
-							$('#bullhorn-apply-form').prepend('<input type="hidden" name="token" value="' + token + '">');
-							$('#bullhorn-apply-form').prepend('<input type="hidden" name="action" value="apply">');
-							$('#bullhorn-apply-form').unbind('submit').submit();
+							jQuery('#bullhorn-apply-form').prepend('<input type="hidden" name="token" value="' + token + '">');
+							jQuery('#bullhorn-apply-form').prepend('<input type="hidden" name="action" value="apply">');
+							jQuery('#bullhorn-apply-form').unbind('submit').submit();
 						});;
 					});
 				});
