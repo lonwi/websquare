@@ -497,31 +497,6 @@ try {
 				</div>
 			</form>
 		</section>
-		<?php if (isset($recaptcha_v3)) : ?>
-			<script>
-				jQuery(function($) {
-					var form = $('#bullhorn-apply-form');
-					var captcha = $('#bullhorn-apply-form__grecaptcha');
-					var settings = captcha.data();
-					var widgetId = window.grecaptcha.render(captcha[0], settings);
-					form.submit(function(event) {
-						event.preventDefault();
-						form.on('reset error', function() {
-							window.grecaptcha.reset(widgetId);
-						});
 
-						window.grecaptcha.ready(function() {
-							window.grecaptcha.execute(widgetId, {
-								action: 'apply'
-							}).then(function(token) {
-								form.prepend('<input type="hidden" name="token" value="' + token + '">');
-								form.prepend('<input type="hidden" name="action" value="apply">');
-								form.unbind('submit').submit();
-							});;
-						});
-					});
-				});
-			</script>
-		<?php endif; ?>
 	<?php endif; ?>
 <?php endif; ?>
