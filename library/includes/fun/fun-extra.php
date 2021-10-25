@@ -53,4 +53,9 @@ if (!function_exists('websquare_mobile_web_app_meta')) {
 	}
 }
 
-add_action('wp_head', 'websquare_mobile_web_app_meta');
+// add_action('wp_head', 'websquare_mobile_web_app_meta');
+
+remove_action('shutdown', 'wp_ob_end_flush_all', 1);
+add_action('shutdown', function () {
+	while (@ob_end_flush());
+});
