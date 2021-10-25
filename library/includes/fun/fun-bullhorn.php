@@ -82,3 +82,19 @@ if (!function_exists('bh_job_url_transform')) {
 		return $url;
 	}
 }
+
+
+if (!function_exists('bh_websquare_register_scripts')) {
+	function bh_websquare_register_scripts()
+	{
+		global $post;
+
+		if (is_captcha_enabled() && is_a($post, 'WP_Post') && (has_shortcode($post->post_content, 'bh_job_item') || has_shortcode($post->post_content, 'bh_job_apply'))) {
+			$src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+			wp_register_script('elementor-recaptcha_v3-api-js', $src, '3.4.1', true);
+			wp_enqueue_script('elementor-recaptcha_v3-api-js');
+		}
+	}
+}
+
+add_action('wp_enqueue_scripts', 'bh_websquare_register_scripts');

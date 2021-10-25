@@ -4,12 +4,10 @@ if (!class_exists('BullHorn_Factory')) {
 	die('bullhorn plugin must be activated');
 }
 
-$recaptcha_v3_site_key = get_option('elementor_pro_recaptcha_v3_site_key');
-$recaptcha_v3_secret_key = get_option('elementor_pro_recaptcha_v3_secret_key');
-$recaptcha_v3_threshold = get_option('elementor_pro_recaptcha_v3_threshold');
-
-if (!empty($recaptcha_v3_site_key) && !empty($recaptcha_v3_secret_key)) {
-	wp_enqueue_script('elementor-recaptcha_v3-api-js');
+if (is_captcha_enabled()) {
+	$recaptcha_v3_site_key = get_option('elementor_pro_recaptcha_v3_site_key');
+	$recaptcha_v3_secret_key = get_option('elementor_pro_recaptcha_v3_secret_key');
+	$recaptcha_v3_threshold = get_option('elementor_pro_recaptcha_v3_threshold');
 	$recaptcha_v3 = true;
 }
 

@@ -55,9 +55,9 @@ if (!function_exists('websquare_enqueue_scripts')) {
 		wp_enqueue_script('jquery');
 
 		wp_enqueue_script('websquare-scripts', get_template_directory_uri() . '/library/assets/js/theme.min.js', array(), $js_version, true);
-		if (is_singular() && comments_open() && get_option('thread_comments')) {
-			wp_enqueue_script('comment-reply');
-		}
+		// if (is_singular() && comments_open() && get_option('thread_comments')) {
+		// 	wp_enqueue_script('comment-reply');
+		// }
 	}
 }
 

@@ -20,3 +20,15 @@ if (!function_exists('print_result')) {
 		}
 	}
 }
+
+if (!function_exists('is_captcha_enabled')) {
+	function is_captcha_enabled() {
+		$recaptcha_v3_site_key = get_option('elementor_pro_recaptcha_v3_site_key');
+		$recaptcha_v3_secret_key = get_option('elementor_pro_recaptcha_v3_secret_key');
+		if (!empty($recaptcha_v3_site_key) && !empty($recaptcha_v3_secret_key)) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+}

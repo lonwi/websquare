@@ -10,15 +10,14 @@ use SquareChilli\Bullhorn\helpers\DevHelper;
 use SquareChilli\Bullhorn\helpers\Smarty;
 use SquareChilli\Bullhorn\models\Application;
 
-$recaptcha_v3_site_key = get_option('elementor_pro_recaptcha_v3_site_key');
-$recaptcha_v3_secret_key = get_option('elementor_pro_recaptcha_v3_secret_key');
-$recaptcha_v3_threshold = get_option('elementor_pro_recaptcha_v3_threshold');
-
-if (!empty($recaptcha_v3_site_key) && !empty($recaptcha_v3_secret_key)) {
-	wp_enqueue_script('elementor-recaptcha_v3-api-js');
+if (is_captcha_enabled()) {
+	$recaptcha_v3_site_key = get_option('elementor_pro_recaptcha_v3_site_key');
+	$recaptcha_v3_secret_key = get_option('elementor_pro_recaptcha_v3_secret_key');
+	$recaptcha_v3_threshold = get_option('elementor_pro_recaptcha_v3_threshold');
 	$recaptcha_v3 = true;
 }
 
+// print_result($recaptcha_v3);
 $api = BullHorn_Factory::Get()->get_api();
 
 include_once(get_template_directory() . '/bullhorn/bh-form-filters.php');
