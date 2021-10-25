@@ -6254,6 +6254,10 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.grecaptcha-badge {
+  z-index: 1;
+}
+
 .bullhorn {
   font-family: "Manrope", Sans-serif;
 }

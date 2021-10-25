@@ -228,23 +228,6 @@ try {
 			</div>
 		</section>
 
-		<?php if (isset($recaptcha_v3)) : ?>
-			<script>
-				jQuery('#bullhorn-apply-form').submit(function(event) {
-					event.preventDefault();
-					grecaptcha.ready(function() {
-						grecaptcha.execute('<?= $recaptcha_v3_site_key ?>', {
-							action: 'apply'
-						}).then(function(token) {
-							jQuery('#bullhorn-apply-form').prepend('<input type="hidden" name="token" value="' + token + '">');
-							jQuery('#bullhorn-apply-form').prepend('<input type="hidden" name="action" value="apply">');
-							jQuery('#bullhorn-apply-form').unbind('submit').submit();
-						});;
-					});
-				});
-			</script>
-		<?php endif; ?>
-
 		<section class="bullhorn bullhorn-apply">
 			<div class="container">
 				<h2 class="elementor-heading-title elementor-size-default"><?php esc_html_e('Apply for this Job', 'websquare'); ?></h2>
@@ -510,31 +493,32 @@ try {
 							</div>
 						</div>
 
-
 					</div>
 				</div>
 			</form>
 		</section>
 		<?php if (isset($recaptcha_v3)) : ?>
 			<script>
-				var form = jQuery('#bullhorn-apply-form');
-				form.submit(function(event) {
-					event.preventDefault();
-					var captcha = jQuery('#bullhorn-apply-form__grecaptcha');
+				jQuery(function($) {
+					var form = $('#bullhorn-apply-form');
+					var captcha = $('#bullhorn-apply-form__grecaptcha');
 					var settings = captcha.data();
 					var widgetId = window.grecaptcha.render(captcha[0], settings);
-					form.on('reset error', function() {
-						window.grecaptcha.reset(widgetId);
-					});
+					form.submit(function(event) {
+						event.preventDefault();
+						form.on('reset error', function() {
+							window.grecaptcha.reset(widgetId);
+						});
 
-					window.grecaptcha.ready(function() {
-						window.grecaptcha.execute(widgetId, {
-							action: 'apply'
-						}).then(function(token) {
-							form.prepend('<input type="hidden" name="token" value="' + token + '">');
-							form.prepend('<input type="hidden" name="action" value="apply">');
-							form.unbind('submit').submit();
-						});;
+						window.grecaptcha.ready(function() {
+							window.grecaptcha.execute(widgetId, {
+								action: 'apply'
+							}).then(function(token) {
+								form.prepend('<input type="hidden" name="token" value="' + token + '">');
+								form.prepend('<input type="hidden" name="action" value="apply">');
+								form.unbind('submit').submit();
+							});;
+						});
 					});
 				});
 			</script>
