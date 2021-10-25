@@ -37,7 +37,8 @@ if (!function_exists('cpt_insights')) {
 				'has_archive'        => false,
 				'taxonomies'		 => array('insights_category'),
 				'rewrite'            => array(
-					'slug' => $cpt['slug'] . '/%insights_category%',
+					// 'slug' => $cpt['slug'] . '/%insights_category%',
+					'slug' => $cpt['slug'],
 					'with_front' => false,
 				),
 				'menu_position'      => 5,
@@ -84,4 +85,4 @@ if (!function_exists('websquare_insights_permalinks')) {
 		return $post_link;
 	}
 }
-add_filter('post_type_link', 'websquare_insights_permalinks', 1, 2);
+// add_filter('post_type_link', 'websquare_insights_permalinks', 1, 2);
