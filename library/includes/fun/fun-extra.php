@@ -28,9 +28,6 @@ if (!function_exists('websquare_upload_mimes')) {
 add_filter('upload_mimes', 'websquare_upload_mimes', 1, 1);
 
 if (!function_exists('websquare_pingback')) {
-	/**
-	 * Add a pingback url auto-discovery header for single posts of any post type.
-	 */
 	function websquare_pingback()
 	{
 		if (is_singular() && pings_open()) {
@@ -39,7 +36,7 @@ if (!function_exists('websquare_pingback')) {
 	}
 }
 
-add_action('wp_head', 'websquare_pingback');
+// add_action('wp_head', 'websquare_pingback');
 
 if (!function_exists('websquare_mobile_web_app_meta')) {
 	/**
