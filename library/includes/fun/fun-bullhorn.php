@@ -76,6 +76,32 @@ if (!function_exists('bh_document_title_parts_function')) {
 
 add_filter('document_title_parts', 'bh_document_title_parts_function', 10, 1);
 
+if (!function_exists('bh_filter_product_wpseo_title')) {
+	function bh_filter_product_wpseo_title($title)
+	{
+		if (is_page('job')) {
+			$api = BullHorn_Factory::Get()->get_api();
+			$filterMachine = FilterMachine::create([
+				Filter::create('jobId')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?job/(\d+)~')->minimum(1),
+				Filter::create('jobIdAR')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?\w+/?job/(\d+)~')->minimum(1),
+			]);
+
+			$jobIdFilter = $filterMachine->getFilter('jobId');
+			$jobIdFilterAR = $filterMachine->getFilter('jobIdAR');
+			$jobId       = !empty($jobIdFilter->getValue()) ? $jobIdFilter->getValue() : $jobIdFilterAR->getValue();
+			$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
+			if (isset($jobOrder) && !empty($jobOrder)) {
+				$title = sprintf(__('Job: %s', 'websquare'), $jobOrder->title);
+			} else {
+				$title = __('Job not found', 'websquare');
+			}
+		}
+		return $title;
+	}
+}
+
+add_filter('wpseo_title', 'bh_filter_product_wpseo_title', 10, 1);
+
 if (!function_exists('bh_job_rewrite_rule')) {
 	function bh_job_rewrite_rule()
 	{
