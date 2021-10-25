@@ -10,34 +10,41 @@
 
 	// Add your JS customizations here
 	(function ($) {
-	  const $window = $(window);
+	  var $window = $(window);
 	  $(document);
 	  $("body");
 	  $("html");
 
 	  function bhCaptcha() {
-	    const form = $('#bullhorn-apply-form');
-	    const captcha = $('#bullhorn-apply-form__grecaptcha');
-	    const settings = captcha.data();
-	    const widgetId = window.grecaptcha.render(captcha[0], settings);
-	    form.on('submit', function (event) {
+	    var form = $("#bullhorn-apply-form");
+	    var captcha = $("#bullhorn-apply-form__grecaptcha");
+
+	    if (!form.length || !captcha.length) {
+	      return false;
+	    }
+
+	    var settings = captcha.data();
+	    var widgetId = window.grecaptcha.render(captcha[0], settings);
+	    form.on("reset error", function () {
+	      window.grecaptcha.reset(widgetId);
+	    });
+	    form.on("submit", function (event) {
 	      event.preventDefault();
-	      form.on('reset error', function () {
-	        window.grecaptcha.reset(widgetId);
-	      });
+	      var button = $(this).find(".bullhorn-apply-form__submit");
+	      button.prop("disabled", true);
 	      window.grecaptcha.ready(function () {
 	        window.grecaptcha.execute(widgetId, {
-	          action: 'apply'
+	          action: "apply"
 	        }).then(function (token) {
 	          form.prepend('<input type="hidden" name="token" value="' + token + '">');
 	          form.prepend('<input type="hidden" name="action" value="apply">');
-	          form.off('submit').trigger('submit');
+	          form.off("submit").trigger("submit");
 	        });
 	      });
 	    });
 	  }
 
-	  $window.on('load', function () {
+	  $window.on("load", function () {
 	    bhCaptcha();
 	  });
 	})(jQuery);

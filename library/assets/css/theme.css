@@ -6596,10 +6596,18 @@ a.text-dark:hover, a.text-dark:focus {
   inset-inline-end: 0;
   bottom: 0;
 }
+.bullhorn-apply-form__field--submit button,
 .bullhorn-apply-form__field--submit input {
   background-color: #DA4D14;
+  border: none;
   color: #FFFFFF;
   font-weight: 600;
+}
+.bullhorn-apply-form__field--submit button:disabled, .bullhorn-apply-form__field--submit button[disabled],
+.bullhorn-apply-form__field--submit input:disabled,
+.bullhorn-apply-form__field--submit input[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .bullhorn-error,

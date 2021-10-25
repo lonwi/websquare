@@ -70,7 +70,7 @@ try {
 		// $metaMachine = Bullhorn::instance()->metaMachine()->openGraphJob($jobOrderModel);
 		// $metaMachine->addProperty('og:description', 'HRInvest');
 
-		if (!empty($_POST['submit'])) {
+		if (!empty($_POST)) {
 
 			if (isset($recaptcha_v3)) {
 				$token = $_POST['token'];
@@ -489,7 +489,7 @@ try {
 								<div id="bullhorn-apply-form__grecaptcha" class="bullhorn-apply-form__grecaptcha" data-sitekey="<?= $recaptcha_v3_site_key; ?>" data-type="v3" data-action="Form" data-badge="bottomright" data-size="invisible"></div>
 							<?php endif; ?>
 							<div class="bullhorn-apply-form__field bullhorn-apply-form__field--submit">
-								<input class="bullhorn-apply-form__submit" name="submit" type="submit" value="<?php esc_html_e('Submit', 'websquare'); ?>">
+								<input class="bullhorn-apply-form__submit" name="submit_form" type="submit" value="<?php esc_html_e('Submit', 'websquare'); ?>">
 							</div>
 						</div>
 

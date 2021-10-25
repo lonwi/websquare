@@ -2,6 +2,20 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
+if (!function_exists('bh_websquare_register_scripts')) {
+	function bh_websquare_register_scripts()
+	{
+		global $post;
+		if (is_captcha_enabled() && is_a($post, 'WP_Post') && (has_shortcode($post->post_content, 'bh_job_item') || has_shortcode($post->post_content, 'bh_job_apply'))) {
+			$src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+			wp_register_script('elementor-recaptcha_v3-api-js', $src, '3.4.1', true);
+			wp_enqueue_script('elementor-recaptcha_v3-api-js');
+		}
+	}
+}
+
+add_action('wp_enqueue_scripts', 'bh_websquare_register_scripts');
+
 if (!function_exists('bh_job_list_function')) {
 	function bh_job_list_function()
 	{
@@ -43,9 +57,11 @@ if (!function_exists('bh_document_title_parts_function')) {
 		$api = BullHorn_Factory::Get()->get_api();
 		$filterMachine = FilterMachine::create([
 			Filter::create('jobId')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?job/(\d+)~')->minimum(1),
+			Filter::create('jobIdAR')->cast('int')->wpParam('bullhorn_joborder_id')->regex('~^/?\w+/?job/(\d+)~')->minimum(1),
 		]);
 		$jobIdFilter = $filterMachine->getFilter('jobId');
-		$jobId       = $jobIdFilter->getValue();
+		$jobIdFilterAR = $filterMachine->getFilter('jobIdAR');
+		$jobId       = !empty($jobIdFilter->getValue()) ? $jobIdFilter->getValue() : $jobIdFilterAR->getValue();
 		if (!empty($jobId)) {
 			$jobOrder = $api->GetJob($jobId, false, false, 'bullhorn_id');
 			if (isset($jobOrder) && !empty($jobOrder)) {
@@ -70,7 +86,6 @@ if (!function_exists('bh_job_rewrite_rule')) {
 
 add_action('init', 'bh_job_rewrite_rule', 10, 0);
 
-
 if (!function_exists('bh_job_url_transform')) {
 	function bh_job_url_transform($url)
 	{
@@ -82,19 +97,3 @@ if (!function_exists('bh_job_url_transform')) {
 		return $url;
 	}
 }
-
-
-if (!function_exists('bh_websquare_register_scripts')) {
-	function bh_websquare_register_scripts()
-	{
-		global $post;
-
-		if (is_captcha_enabled() && is_a($post, 'WP_Post') && (has_shortcode($post->post_content, 'bh_job_item') || has_shortcode($post->post_content, 'bh_job_apply'))) {
-			$src = 'https://www.google.com/recaptcha/api.js?render=explicit';
-			wp_register_script('elementor-recaptcha_v3-api-js', $src, '3.4.1', true);
-			wp_enqueue_script('elementor-recaptcha_v3-api-js');
-		}
-	}
-}
-
-add_action('wp_enqueue_scripts', 'bh_websquare_register_scripts');

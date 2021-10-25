@@ -312,10 +312,17 @@
 
 			}
 			&--submit {
+				button,
 				input {
 					background-color: colour("red-orange");
+					border: none;
 					color: colour("white");
 					font-weight: 600;
+					&:disabled,
+					&[disabled] {
+						opacity: 0.5;
+						cursor: not-allowed;
+					}
 				}
 			}
 		}
