@@ -37,7 +37,28 @@
 			});
 		});
 	}
+
+	function bhLangSwitcherJobs() {
+		var pathname = window.location.pathname;
+		console.log("pathname", pathname);
+
+		if (pathname.startsWith("/ar/job/")) {
+			$("a.plsfe-item").attr("href", function (i, href) {
+				pathname = pathname.replace("/ar/job/", "");
+				return href + pathname;
+			});
+		}
+		if (pathname.startsWith("/job/")) {
+			$("a.plsfe-item").attr("href", function (i, href) {
+				pathname = pathname.replace("/job/", "");
+				return href + pathname;
+			});
+		}
+	}
+	console.log('WORKS');
+
 	$window.on("load", function () {
 		bhCaptcha();
+		bhLangSwitcherJobs();
 	});
 })(jQuery);
