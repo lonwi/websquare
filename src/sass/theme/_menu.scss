@@ -108,14 +108,15 @@
 			inset-inline-start: 0;
 			inset-inline-end: 0;
 			width: 100%;
-			padding: 60px 120px;
+			padding: 45px 120px;
 			@media (min-width: 1025px) and (max-width: 1360px) {
-				padding: 60px 60px;
+				padding: 45px 60px;
 			}
 			@media (min-width: 1361px) and (max-width: 1650px) {
-				padding: 60px 60px;
+				padding: 45px 60px;
 			}
-			min-height: 460px;
+
+			// min-height: 460px;
 			> li {
 				&:hover {
 					background: #da4d14;
@@ -136,8 +137,7 @@
 					top: 0;
 					inset-inline-start: 620px;
 					inset-inline-end: 0;
-					bottom: 0;
-					padding: 60px 30px;
+					padding: 45px 30px;
 					@media (min-width: 1025px) and (max-width: 1360px) {
 						inset-inline-start: 420px;
 					}
@@ -161,7 +161,7 @@
 							background: #fff;
 							display: none;
 							position: absolute;
-							top: 210px;
+							top: 195px;
 							inset-inline-start: 530px;
 							inset-inline-end: 0;
 							bottom: 0;
