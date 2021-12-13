@@ -1,6 +1,6 @@
 {
   "name": "websquare",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Websquare WordPress Theme",
   "main": "index.js",
   "scripts": {
@@ -51,6 +51,8 @@
     "popper.js": "^1.16.1",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
+    "postcss-dir-pseudo-class": "^6.0.1",
+    "postcss-logical": "^5.0.1",
     "rollup": "^2.56.3",
     "sass": "^1.41.0",
     "terser": "^5.8.0"

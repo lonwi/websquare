@@ -13,6 +13,8 @@ module.exports = (ctx) => {
 			autoprefixer: {
 				cascade: false,
 			},
+			"postcss-logical": {},
+			"postcss-dir-pseudo-class": {}
 			// "postcss-understrap-palette-generator" : {}
 		},
 	};

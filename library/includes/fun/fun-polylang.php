@@ -35,6 +35,14 @@ if (!function_exists('websquare_language_switch')) {
 	}
 }
 
+function websquare_language_attributes_ltr( $output, $doctype ) {
+	if ( !function_exists( 'is_rtl' ) || !is_rtl() ) {
+        $output .= ' dir="ltr"';
+    }
+    return $output;
+}
+add_filter( 'language_attributes', 'websquare_language_attributes_ltr', 10, 2 );
+
 // add_action('template_redirect', 'websquare_language_switch');
 
 // function translate_date($language, $d, $m, $y)
