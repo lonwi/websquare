@@ -149,9 +149,13 @@ $results = $jobQuery->all();
 										'U',
 										strtotime($job->start_date)
 									));
-									// echo $time_ago;
 									?>
-									<?php esc_html_e($time_ago .' ago', 'websquare'); ?>
+									<?php
+									printf(
+										esc_html__('%s ago', 'websquare'),
+										$time_ago
+									);
+									?>
 								</div>
 							</div>
 						</div>
