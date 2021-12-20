@@ -2,14 +2,14 @@
 # This file is distributed under the .
 msgid ""
 msgstr ""
-"Project-Id-Version: Websquare 1.0\n"
+"Project-Id-Version: Websquare 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/websquare\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-10-25T14:57:24+00:00\n"
+"POT-Creation-Date: 2021-12-20T07:46:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: websquare\n"
@@ -205,15 +205,15 @@ msgstr ""
 msgid "Your search found no jobs within our database. Try broadening your search or contact us to discuss your job requirements."
 msgstr ""
 
-#: bullhorn/bh-job-list.php:154
-msgid " ago"
+#: bullhorn/bh-job-list.php:155
+msgid "%s ago"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:180
+#: bullhorn/bh-job-list.php:184
 msgid "Previous Page"
 msgstr ""
 
-#: bullhorn/bh-job-list.php:212
+#: bullhorn/bh-job-list.php:216
 msgid "Next Page"
 msgstr ""
 
